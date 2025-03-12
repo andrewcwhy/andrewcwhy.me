@@ -1,12 +1,11 @@
-import { Routes, Route } from 'react-router-dom'
-import '@/styles/App.css'
-import Home from '@/pages/Home'
-import About from '@/pages/About'
-import Contact from '@/pages/Contact'
-import Navbar from '@/components/Nav'
+import { Routes, Route } from "react-router-dom";
+import "@/styles/App.css";
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import Contact from "@/pages/Contact";
+import Navbar from "@/components/Nav";
 
 function App() {
-
   return (
     <>
       <Navbar />
@@ -16,7 +15,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
