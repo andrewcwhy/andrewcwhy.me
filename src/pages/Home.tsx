@@ -5,7 +5,9 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-4xl font-bold text-center">🏠 Welcome to Home Page</h1>
+      <h1 className="text-4xl font-bold text-center">
+        🏠 Welcome to Home Page
+      </h1>
 
       <p className="text-lg text-gray-600 mt-2">
         This is a modern React 19 setup with Vite & TypeScript.
