@@ -3,7 +3,8 @@ function Contact() {
     <div className="max-w-3xl mx-auto p-6 text-center">
       <h1 className="text-4xl font-bold mb-4">Contact Me</h1>
       <p className="text-lg text-gray-600">
-        Feel free to reach out to me for any collaboration, questions, or networking opportunities.
+        Feel free to reach out to me for any collaboration, questions, or
+        networking opportunities.
       </p>
       <div className="mt-6">
         <p className="text-lg text-gray-700 font-semibold">Email:</p>
@@ -38,6 +39,6 @@ function Contact() {
       </div>
     </div>
   );
-};
+}
 
 export default Contact;
