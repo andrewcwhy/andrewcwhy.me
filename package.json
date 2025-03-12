@@ -1,11 +1,10 @@
 {
   "name": "acy2k5.github.io",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "bunx --bun vite",
-    "deploy": "bun run vite build && gh-pages -d dist",
     "build": "tsc -b && vite build",
     "format": "bun exec prettier . --write",
     "lint": "eslint .",
