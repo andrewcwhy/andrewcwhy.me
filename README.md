@@ -5,7 +5,7 @@
 Welcome to the source code for [andrewcwhy.me](https://andrewcwhy.me), my personal portfolio. Built with **Vite, React, TypeScript, and Tailwind CSS**, this website showcases my projects, experience, and technical insights.
 
 ## ❓About the Domain Name
-The domain name **andrewcwhy.me** is a play on my full name Here's the breakdown:
+The domain name **andrewcwhy.me** is a play on my full name. Here's the breakdown:
 - **Andrew** – My first name.
 - **C** – My middle initial, which sounds like the word "see."
 - **Why** – Represents the letter "Y," my last name's initial.
