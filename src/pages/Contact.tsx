@@ -1,4 +1,4 @@
-function Contact() {
+export default function Contact() {
   return (
     <div className="max-w-3xl mx-auto p-6 text-center">
       <h1 className="text-4xl font-bold mb-4">Contact Me</h1>
@@ -39,5 +39,3 @@ function Contact() {
     </div>
   );
 };
-
-export default Contact;

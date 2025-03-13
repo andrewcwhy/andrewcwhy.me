@@ -1,11 +1,12 @@
 import { useState } from "react";
 
-const Home = () => {
+
+export default function Home() {
   const [count, setCount] = useState(0);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-4xl font-bold text-center">🏠 Welcome to Home Page</h1>
+      <h1 className="text-4xl font-bold text-center">Hi, I'm Andrew</h1>
 
       <p className="text-lg text-gray-600 mt-2">
         This is a modern React 19 setup with Vite & TypeScript.
@@ -20,5 +21,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;
