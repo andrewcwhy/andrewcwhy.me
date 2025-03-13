@@ -1,4 +1,6 @@
 import { FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/fa";
+import { SiRoblox } from "react-icons/si";
+
 
 export const socialLinks = {
   github: {
@@ -16,5 +18,10 @@ export const socialLinks = {
     url: "https://www.linkedin.com/in/youngandrewchristian",
     icon: FaLinkedin,
   },
+  roblox: {
+    name: "Roblox",
+    url: "https://www.roblox.com/users/145329133/profile",
+    icon: SiRoblox,
+  }
 };
 
