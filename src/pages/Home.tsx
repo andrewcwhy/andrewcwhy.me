@@ -6,7 +6,7 @@ export default function Home() {
       <main className="flex flex-col min-h-screen">
         <Hero
           title="Hey, I'm Andrew 👋"
-          subtitle="A passionate Full-Stack Developer & Cybersecurity Enthusiast"
+          subtitle="A student at UCF"
           buttonText="Contact Me"
           buttonLink="#contact"
         />

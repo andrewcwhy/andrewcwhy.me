@@ -4,8 +4,7 @@ export default function About() {
       <h1 className="text-4xl font-bold mb-4">About Me</h1>
       <p className="text-lg text-gray-600">
         Hi, I'm Andrew! I'm a Computer Science student at UCF with a passion for cybersecurity,
-        programming, and web development. I specialize in front-end technologies like React, 
-        TypeScript, and Tailwind CSS, and I'm also learning Java, Python, C, and Linux.
+        programming, and web development.
       </p>
       <p className="text-lg text-gray-600 mt-4">
         Currently, I'm preparing for CompTIA certifications and working on various projects related to
