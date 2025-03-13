@@ -4,4 +4,4 @@ export default function Footer() {
       <p>&copy; {new Date().getFullYear()} My Website. All rights reserved.</p>
     </footer>
   );
-};
+}

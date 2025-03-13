@@ -1,4 +1,9 @@
-import { FaGithub, FaLinkedin, FaDiscord, FaStackOverflow } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaDiscord,
+  FaStackOverflow,
+} from "react-icons/fa";
 
 export const socialLinks = {
   github: {
@@ -17,4 +22,3 @@ export const socialLinks = {
     icon: FaLinkedin,
   },
 };
-
