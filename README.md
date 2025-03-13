@@ -11,7 +11,7 @@ The domain name **andrewcwhy.me** is a play on my full name Here's the breakdown
 - **Why** – Represents the letter "Y," my last name's initial.
 - **.me** - Literally me.
 
-When pronounced together, it sounds like **"Andrew see why"**-because you see why?
+When pronounced together, it sounds like **"Andrew see why"**. Now you see why?
 
 ## 🚀 Tech Stack
 This website is built using:
