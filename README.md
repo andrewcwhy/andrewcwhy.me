@@ -2,7 +2,7 @@
 
 **Personal portfolio website of Andrew Christian Young**  
 
-Welcome to the source code for [andrewcwhy.me](https://andrewcwhy.me), my personal portfolio and blog. Built with **Vite, React, TypeScript, and Tailwind CSS**, this website showcases my projects, experience, and technical insights.
+Welcome to the source code for [andrewcwhy.me](https://andrewcwhy.me), my personal portfolio. Built with **Vite, React, TypeScript, and Tailwind CSS**, this website showcases my projects, experience, and technical insights.
 
 ## ❓About the Domain Name
 The domain name **andrewcwhy.me** is a play on my full name Here's the breakdown:
