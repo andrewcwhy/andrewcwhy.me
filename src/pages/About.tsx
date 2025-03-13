@@ -6,10 +6,6 @@ export default function About() {
         Hi, I'm Andrew! I'm a Computer Science student at UCF with a passion for cybersecurity,
         programming, and web development.
       </p>
-      <p className="text-lg text-gray-600 mt-4">
-        Currently, I'm preparing for CompTIA certifications and working on various projects related to
-        cybersecurity and full-stack development.
-      </p>
     </div>
   );
 };
