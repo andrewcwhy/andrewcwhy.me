@@ -1,6 +1,6 @@
 # andrewcwhy.me
 
-**Personal portfolio website of Andrew Christian Young**  
+**Personal portfolio website of me**  
 
 Welcome to the source code for [andrewcwhy.me](https://andrewcwhy.me), my personal portfolio. Built with **Vite, React, TypeScript, and Tailwind CSS**, this website showcases my projects, experience, and technical insights.
 
