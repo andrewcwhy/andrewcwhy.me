@@ -10,15 +10,13 @@ Welcome to the source code for [andrewcwhy.me](https://andrewcwhy.me), my person
 - **Hosting:** GitHub Pages  
 
 ## 🔗 Live Website
-
 [**andrewcwhy.me**](https://andrewcwhy.me)
 
 ## 📬 Connect with Me  
-
 - **GitHub:** [github.com/acy2k5](https://github.com/acy2k5)  
 - **LinkedIn:** [linkedin.com/in/youngandrewchristian](https://www.linkedin.com/in/youngandrewchristian)  
 - **Stack Overflow:** [stackoverflow.com/users/13189567/acy2k5](https://stackoverflow.com/users/13189567/acy2k5)  
 
 ---
 
-💻 Built with ❤️ by **Andrew Christian Young**
+Built with ❤️ by **Andrew Christian Young**
