@@ -6,8 +6,7 @@ const Contact = () => {
     <section>
       <h2>Contact Me</h2>
       <ContactForm />
-      <SocialLinks showName={false} showUrl={true} showIcon={true}/>
-
+      <SocialLinks showName={false} showUrl={true} showIcon={true} />
     </section>
   );
 };
