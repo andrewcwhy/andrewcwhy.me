@@ -11,8 +11,8 @@ export default function Home() {
           buttonText="Contact Me"
           buttonLink="#contact"
         />
-        <SocialLinks showName={false} showUrl={true} showIcon={true}/>
+        <SocialLinks showName={false} showUrl={true} showIcon={true} />
       </main>
     </>
   );
-};
+}
