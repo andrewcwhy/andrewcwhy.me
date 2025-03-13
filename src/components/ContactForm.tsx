@@ -27,19 +27,19 @@ function ContactForm() {
         }
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
-        // Validate form before submission
+      
         const validationResult = contactFormSchema.safeParse(formData);
         if (!validationResult.success) {
-            setErrors(validationResult.error.flatten().fieldErrors as Record<string, string | undefined>);
-            return;
+          setErrors(validationResult.error.flatten().fieldErrors as Record<string, string | undefined>);
+          return;
         }
-
-        // Proceed with form submission if valid
-        console.log("Form submitted successfully!", formData);
-    };
+      
+        // Submit the form normally after validation
+        e.currentTarget.submit();
+      };
+      
 
     return (
         <form action="https://formsubmit.co/fc71e3e546d354d1677723661d690b4a" method="POST" onSubmit={handleSubmit} className="max-w-lg mx-auto bg-white shadow-lg rounded-2xl p-6 space-y-4">
