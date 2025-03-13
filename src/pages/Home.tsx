@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 export default function Home() {
   const [count, setCount] = useState(0);
 
@@ -20,4 +19,4 @@ export default function Home() {
       </button>
     </div>
   );
-};
+}
