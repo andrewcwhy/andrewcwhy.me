@@ -1,4 +1,4 @@
-# 🌐 Andrew Christian Young - Personal Website  
+# andrewcwhy.me
 
 Welcome to the source code for [andrewcwhy.me](https://andrewcwhy.me), my personal portfolio and blog. Built with **Vite, React 19, TypeScript, and Tailwind CSS 4**, this website showcases my projects, experience, and technical insights.
 
