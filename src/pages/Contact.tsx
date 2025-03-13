@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <section>
       <ContactForm />
-      <SocialLinks showName={false} showUrl={true} showIcon={true}/>
+      <SocialLinks showName={false} showUrl={true} showIcon={true} />
     </section>
   );
 };
