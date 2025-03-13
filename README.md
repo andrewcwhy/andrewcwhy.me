@@ -9,6 +9,7 @@ The domain name **andrewcwhy.me** is a play on my full name Here's the breakdown
 - **Andrew** – My first name.
 - **C** – My middle initial, which sounds like the word "see."
 - **Why** – Represents the letter "Y," my last name's initial.
+- **.me** - Literally me.
 
 When pronounced together, it sounds like **"Andrew see why"**.
 
