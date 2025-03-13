@@ -42,7 +42,7 @@ function ContactForm() {
       
 
     return (
-        <form action="https://formsubmit.co/fc71e3e546d354d1677723661d690b4a" method="POST" onSubmit={handleSubmit} className="max-w-lg mx-auto bg-white shadow-lg rounded-2xl p-6 space-y-4">
+        <form action="https://formsubmit.co/acydeveloper05@gmail.com" method="POST" onSubmit={handleSubmit} className="max-w-lg mx-auto bg-white shadow-lg rounded-2xl p-6 space-y-4">
             <input type="hidden" name="_captcha" value="false" />
 
             <div>
