@@ -18,8 +18,8 @@ const sections = [
         code: `
     <div class="about-me">
       <h2 class="mb-4">About Me</h2>
-      <p class="mb-4">I'm Andrew, a web developer and on path to learn cybersecurity.</p>
-      <p class="mb-4">Currently, I'm pursuing a degree in Computer Science at UCF.</p>
+      <p class="mb-4">I'm Andrew, and I'm learning web development and other programming languages like Python, Java, and C.</p>
+      <p class="mb-4">I'm pursuing a degree in Computer Science at UCF.</p>
     </div>`,
     },
     {
