@@ -5,7 +5,7 @@ import { SiRoblox } from "react-icons/si";
 export const socialLinks = {
   github: {
     pla: "GitHub",
-    url: "https://github.com/acy2k5",
+    url: "https://github.com/andrewcwhy",
     icon: FaGithub,
   },
   stackoverflow: {

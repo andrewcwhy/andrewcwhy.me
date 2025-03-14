@@ -11,34 +11,36 @@ import {
 const sections = [
   {
     title: "About Me",
-    code: `<div class="about-me">
-  <h2 class="mb-4">About Me</h2>
-  <p class="mb-4">I'm Andrew C. Young, a dedicated web developer and cybersecurity enthusiast with a passion for building modern web applications and securing digital assets.</p>
-  <p class="mb-4">Currently, I'm pursuing a degree in Computer Science at UCF, where I immerse myself in both development and cybersecurity studies.</p>
-  <p>My journey is all about learning, growing, and creating secure digital experiences that stand out.</p>
-</div>`
+    code: `
+    <div class="about-me">
+      <h2 class="mb-4">About Me</h2>
+      <p class="mb-4">I'm Andrew C. Young, a dedicated web developer and cybersecurity enthusiast with a passion for building modern web applications and securing digital assets.</p>
+      <p class="mb-4">Currently, I'm pursuing a degree in Computer Science at UCF, where I immerse myself in both development and cybersecurity studies.</p>
+      <p>My journey is all about learning, growing, and creating secure digital experiences that stand out.</p>
+    </div>`
   },
   {
     title: "Tech Stack",
-    code: `<div class="tech-stack">
-  <h2 class="mb-4">Tech Stack</h2>
-  <h3 class="mb-2">Frontend</h3>
-  <p class="mb-4">Our frontend is built with React, TypeScript, Tailwind CSS, and Next.js, ensuring dynamic and responsive user interfaces that provide an excellent user experience.</p>
-  <h3 class="mb-2">Backend</h3>
-  <p class="mb-4">We power our applications with Node.js, Express, and MongoDB to deliver fast, scalable, and robust backend solutions.</p>
-  <h3 class="mb-2">Tools</h3>
-  <p class="mb-4">Utilizing Vite, GitHub Actions, and Docker helps us maintain an efficient workflow from development to deployment.</p>
-  <h3 class="mb-2">Cybersecurity</h3>
-  <p>Our commitment to security is demonstrated through practices and tools centered around Linux, Networking, C programming, and Python.</p>
-</div>`
+    code: `
+    <div class="tech-stack">
+      <h2 class="mb-4">Tech Stack</h2>
+      <h3 class="mb-2">Frontend</h3>
+      <p class="mb-4">Our frontend is built with React, TypeScript, Tailwind CSS, and Next.js, ensuring dynamic and responsive user interfaces that provide an excellent user experience.</p>
+      <h3 class="mb-2">Backend</h3>
+      <p class="mb-4">We power our applications with Node.js, Express, and MongoDB to deliver fast, scalable, and robust backend solutions.</p>
+      <h3 class="mb-2">Tools</h3>
+      <p class="mb-4">Utilizing Vite, GitHub Actions, and Docker helps us maintain an efficient workflow from development to deployment.</p>
+      <h3 class="mb-2">Cybersecurity</h3>
+      <p>Our commitment to security is demonstrated through practices and tools centered around Linux, Networking, C programming, and Python.</p>
+    </div>`
   },
   {
     title: "Contact",
-    code: `<div class="contact">
-  <h2 class="mb-4">Contact</h2>
-  <p class="mb-4">Email: <a href="mailto:contact@andrewcwhy.me">contact@andrewcwhy.me</a></p>
-  <p class="mb-4">Website: <a href="https://andrewcwhy.me" target="_blank" rel="noopener noreferrer">andrewcwhy.me</a></p>
-  <p>GitHub: <a href="https://github.com/acy2k5" target="_blank" rel="noopener noreferrer">acy2k5</a></p>
+    code: `
+    <div class="contact">
+      <h2 class="mb-4">Follow me</h2>
+      <p class="mb-4">Website: <a href="https://andrewcwhy.me" target="_blank" rel="noopener noreferrer">andrewcwhy.me</a></p>
+      <p>GitHub: <a href="https://github.com/andrewcwhy" target="_blank" rel="noopener noreferrer">acy2k5</a></p>
 </div>`
   },
 ];
@@ -126,9 +128,9 @@ const About = () => {
             rel="noopener noreferrer"
             className="text-blue-400 hover:underline"
           >
-            acy2k5
+            andrewcwhy
           </a>
-          /<span className="text-gray-400">ABOUTME.md</span>
+          /<span className="text-gray-400">about.html</span>
         </h1>
       </div>
       {sections.map((section, index) => (
