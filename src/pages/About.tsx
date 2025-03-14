@@ -67,7 +67,9 @@ const TabSwitcher = ({ activeTab, setActiveTab, index }) => (
     <button
       onClick={() => setActiveTab("preview")}
       className={`px-4 py-2 text-sm ${
-        activeTab !== "code" ? "text-blue-400 border-b-2 border-blue-400" : "text-gray-400"
+        activeTab !== "code"
+          ? "text-blue-400 border-b-2 border-blue-400"
+          : "text-gray-400"
       } hover:text-blue-300`}
     >
       <FaEye className="inline-block mr-1" /> Preview
@@ -75,7 +77,9 @@ const TabSwitcher = ({ activeTab, setActiveTab, index }) => (
     <button
       onClick={() => setActiveTab("code")}
       className={`px-4 py-2 text-sm ${
-        activeTab === "code" ? "text-blue-400 border-b-2 border-blue-400" : "text-gray-400"
+        activeTab === "code"
+          ? "text-blue-400 border-b-2 border-blue-400"
+          : "text-gray-400"
       } hover:text-blue-300`}
     >
       <FaCode className="inline-block mr-1" /> Code
@@ -103,7 +107,11 @@ const Section = ({ section, index }) => {
         <FaTerminal className="text-green-400 mr-2" />
         <span className="text-gray-300">{section.title}</span>
       </div>
-      <TabSwitcher activeTab={activeTab} setActiveTab={setActiveTab} index={index} />
+      <TabSwitcher
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        index={index}
+      />
       <div className="relative bg-gray-950 p-4 rounded-b-md border border-gray-700 overflow-x-auto">
         {activeTab === "code" ? (
           <pre className="text-gray-200">
@@ -114,7 +122,9 @@ const Section = ({ section, index }) => {
             {section.preview}
           </div>
         )}
-        {activeTab === "code" && <CopyButton text={section.code} copied={copied} onCopy={handleCopy} />}
+        {activeTab === "code" && (
+          <CopyButton text={section.code} copied={copied} onCopy={handleCopy} />
+        )}
       </div>
     </div>
   );
