@@ -1,4 +1,4 @@
-import Button from '@/components/Button'
+import Button from '@/components/form/Button'
 
 interface HeroProps {
     title: string
@@ -14,7 +14,7 @@ const Hero: React.FC<HeroProps> = ({
     buttonLink,
 }) => {
     return (
-        <section className="h-screen flex justify-center items-center bg-gray-900 text-white text-center font-mono">
+        <section className="h-screen flex justify-center items-center bg-gray-900 text-white text-center">
             <div className="w-full max-w-2xl p-6 bg-gray-800 border border-gray-700 rounded shadow-lg">
                 {/* Terminal header with control buttons */}
                 <div className="flex items-center space-x-2 mb-4">

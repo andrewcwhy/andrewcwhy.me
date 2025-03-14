@@ -66,7 +66,7 @@ const CopyButton = ({ text, copied, onCopy }) => (
 )
 
 const TabSwitcher = ({ activeTab, setActiveTab }) => (
-    <div className="flex border-b border-gray-700 bg-gray-800">
+    <div className="flex border-b border-gray-700 bg-gray-800 border-r border-l">
         <button
             onClick={() => setActiveTab('preview')}
             className={`px-4 py-2 text-sm ${
@@ -142,7 +142,7 @@ const Section = ({ section }) => {
 
 const About = () => {
     return (
-        <div className="max-w-3xl mx-auto mt-10 bg-gray-900 text-gray-200 p-6 rounded-lg shadow-lg font-mono">
+        <div className="max-w-3xl mx-auto mt-10 p-6">
             <div className="flex items-center space-x-2 border-b border-gray-700 pb-4 mb-4">
                 <FaBookOpen className="text-green-400 text-lg" />
                 <h1 className="text-lg text-gray-300">
@@ -151,6 +151,7 @@ const About = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-400 hover:underline"
+                        title="Visit my GitHub profile"
                     >
                         {github.username}
                     </a>

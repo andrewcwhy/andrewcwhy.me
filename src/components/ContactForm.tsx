@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { contactFormSchema, ContactFormData } from '@/schemas/contactForm'
-import ErrorMessage from '@/components/ErrorMessage'
-import { z } from 'zod'
+import ErrorMessage from '@/components/form/ErrorMessage'
+import Label from '@/components/form/Label';
+import Input from '@/components/form/Input';
+import TextArea from '@/components/form/TextArea';
 
 function ContactForm() {
     const [formData, setFormData] = useState<ContactFormData>({
@@ -58,71 +60,59 @@ function ContactForm() {
             action="https://formsubmit.co/acydeveloper05@gmail.com"
             method="POST"
             onSubmit={handleSubmit}
-            className="max-w-lg mx-auto bg-white shadow-lg rounded-2xl p-6 space-y-4"
+            className="bg-gray-950 border rounded-md p-6 space-y-4 border-gray-700"
         >
             <input type="hidden" name="_captcha" value="false" />
 
             <div>
-                <label className="block mb-1" htmlFor="name">
-                    Name
-                </label>
-                <input
-                    className="w-full border p-2 rounded-md"
+                <Label htmlFor="name">Name</Label>
+                <Input
+                    name="name"
+                    onChange={handleChange}
                     title="Enter your name"
                     type="text"
-                    name="name"
                     value={formData.name}
-                    onChange={handleChange}
                 />
                 <ErrorMessage message={errors.name} />
             </div>
 
             <div>
-                <label className="block mb-1" htmlFor="email">
-                    Email
-                </label>
-                <input
-                    className="w-full border p-2 rounded-md"
+                <Label htmlFor="email">Email</Label>
+                <Input
+                    name="email"
+                    onChange={handleChange}
                     title="Enter a valid email address"
                     type="email"
-                    name="email"
                     value={formData.email}
-                    onChange={handleChange}
                 />
                 <ErrorMessage message={errors.email} />
             </div>
 
             <div>
-                <label className="block mb-1" htmlFor="subject">
-                    Subject
-                </label>
-                <input
-                    className="w-full border p-2 rounded-md"
+                <Label htmlFor="subject">Subject</Label>
+                <Input
+                    name="subject"
+                    onChange={handleChange}
                     title="Enter the subject of your message"
                     type="text"
-                    name="subject"
                     value={formData.subject}
-                    onChange={handleChange}
                 />
                 <ErrorMessage message={errors.subject} />
             </div>
             <div>
-                <label className="block mb-1" htmlFor="message">
-                    Message
-                </label>
-                <textarea
-                    className="w-full border p-2 rounded-md"
-                    title="Write your message here"
+                <Label htmlFor="message">Message</Label>
+                <TextArea
                     name="message"
-                    value={formData.message}
                     onChange={handleChange}
-                ></textarea>
+                    title="Write your message here"
+                    value={formData.message}
+                />
                 <ErrorMessage message={errors.message} />
             </div>
 
             <button
                 type="submit"
-                className="w-full bg-blue-600 text-white font-medium py-2 rounded-md hover:bg-blue-700 transition"
+                className="w-full bg-blue-400 text-gray-200 font-medium py-2 rounded-md hover:bg-blue-500 transition"
             >
                 Submit
             </button>
