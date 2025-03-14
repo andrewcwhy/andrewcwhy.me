@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { contactFormSchema, ContactFormData } from '@/schemas/contactForm'
 import ErrorMessage from '@/components/form/ErrorMessage'
-import Label from '@/components/form/Label';
-import Input from '@/components/form/Input';
-import TextArea from '@/components/form/TextArea';
+import Label from '@/components/form/Label'
+import Input from '@/components/form/Input'
+import TextArea from '@/components/form/TextArea'
 
 function ContactForm() {
     const [formData, setFormData] = useState<ContactFormData>({
