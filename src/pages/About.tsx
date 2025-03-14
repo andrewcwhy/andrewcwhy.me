@@ -44,8 +44,12 @@ const sections = [
     </div>`,
         preview: (
             <div className="contact">
-              <h2 className="mb-4">Follow me</h2>
-              <SocialLinks showPlatform={true} showUrl={true} showIcon={true} />
+                <h2 className="mb-4">Follow me</h2>
+                <SocialLinks
+                    showPlatform={true}
+                    showUrl={true}
+                    showIcon={true}
+                />
             </div>
         ),
     },
@@ -124,23 +128,20 @@ const Section = ({ section, isLast }) => {
                             onCopy={handleCopy}
                         />
                     </>
+                ) : section.preview ? (
+                    section.preview
                 ) : (
-                    section.preview ? (
-                        section.preview
-                    ) : (
-                        <div
-                            className="prose prose-invert max-w-none text-gray-300"
-                            dangerouslySetInnerHTML={{ __html: section.code }}
-                        />
-                    )
+                    <div
+                        className="prose prose-invert max-w-none text-gray-300"
+                        dangerouslySetInnerHTML={{ __html: section.code }}
+                    />
                 )}
             </div>
         </div>
     )
 }
 
-
-export default function About(){
+export default function About() {
     return (
         <div className="max-w-3xl mx-auto p-6">
             <header className="flex items-center space-x-2 border-b border-gray-700 pb-4 mb-4">
