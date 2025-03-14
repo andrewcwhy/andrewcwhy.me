@@ -11,45 +11,35 @@ import {
 const sections = [
   {
     title: "About Me",
-    preview: `I'm Andrew C. Young, a web developer and cybersecurity enthusiast.
-
-🚀 Passionate about building modern web applications and securing digital assets.  
-📍 Currently studying Computer Science at UCF.  
-🔐 Learning cybersecurity and CompTIA certifications.`,
-    code: `{
-  "name": "Andrew C. Young",
-  "role": "Web Developer & Cybersecurity Enthusiast",
-  "passions": [
-    "Building modern web applications",
-    "Securing digital assets"
-  ],
-  "education": "Computer Science at UCF",
-  "learning": ["Cybersecurity", "CompTIA Certifications"]
-}`,
+    code: `<div class="about-me">
+  <h2 class="mb-4">About Me</h2>
+  <p class="mb-4">I'm Andrew C. Young, a dedicated web developer and cybersecurity enthusiast with a passion for building modern web applications and securing digital assets.</p>
+  <p class="mb-4">Currently, I'm pursuing a degree in Computer Science at UCF, where I immerse myself in both development and cybersecurity studies.</p>
+  <p>My journey is all about learning, growing, and creating secure digital experiences that stand out.</p>
+</div>`
   },
   {
     title: "Tech Stack",
-    preview: `Frontend: React, TypeScript, Tailwind CSS, Next.js  
-Backend: Node.js, Express, MongoDB  
-Tools: Vite, GitHub Actions, Docker  
-Cybersecurity: Linux, Networking, C, Python`,
-    code: `{
-  "frontend": ["React", "TypeScript", "Tailwind CSS", "Next.js"],
-  "backend": ["Node.js", "Express", "MongoDB"],
-  "tools": ["Vite", "GitHub Actions", "Docker"],
-  "cybersecurity": ["Linux", "Networking", "C", "Python"]
-}`,
+    code: `<div class="tech-stack">
+  <h2 class="mb-4">Tech Stack</h2>
+  <h3 class="mb-2">Frontend</h3>
+  <p class="mb-4">Our frontend is built with React, TypeScript, Tailwind CSS, and Next.js, ensuring dynamic and responsive user interfaces that provide an excellent user experience.</p>
+  <h3 class="mb-2">Backend</h3>
+  <p class="mb-4">We power our applications with Node.js, Express, and MongoDB to deliver fast, scalable, and robust backend solutions.</p>
+  <h3 class="mb-2">Tools</h3>
+  <p class="mb-4">Utilizing Vite, GitHub Actions, and Docker helps us maintain an efficient workflow from development to deployment.</p>
+  <h3 class="mb-2">Cybersecurity</h3>
+  <p>Our commitment to security is demonstrated through practices and tools centered around Linux, Networking, C programming, and Python.</p>
+</div>`
   },
   {
     title: "Contact",
-    preview: `📧 Email: contact@andrewcwhy.me  
-🌐 Website: [andrewcwhy.me](https://andrewcwhy.me)  
-🐙 GitHub: [acy2k5](https://github.com/acy2k5)`,
-    code: `{
-  "email": "contact@andrewcwhy.me",
-  "website": "https://andrewcwhy.me",
-  "github": "https://github.com/acy2k5"
-}`,
+    code: `<div class="contact">
+  <h2 class="mb-4">Contact</h2>
+  <p class="mb-4">Email: <a href="mailto:contact@andrewcwhy.me">contact@andrewcwhy.me</a></p>
+  <p class="mb-4">Website: <a href="https://andrewcwhy.me" target="_blank" rel="noopener noreferrer">andrewcwhy.me</a></p>
+  <p>GitHub: <a href="https://github.com/acy2k5" target="_blank" rel="noopener noreferrer">acy2k5</a></p>
+</div>`
   },
 ];
 
@@ -62,7 +52,7 @@ const CopyButton = ({ text, copied, onCopy }) => (
   </button>
 );
 
-const TabSwitcher = ({ activeTab, setActiveTab, index }) => (
+const TabSwitcher = ({ activeTab, setActiveTab }) => (
   <div className="flex border-b border-gray-700 bg-gray-800">
     <button
       onClick={() => setActiveTab("preview")}
@@ -83,7 +73,7 @@ const TabSwitcher = ({ activeTab, setActiveTab, index }) => (
   </div>
 );
 
-const Section = ({ section, index }) => {
+const Section = ({ section }) => {
   const [activeTab, setActiveTab] = useState("preview");
   const [copied, setCopied] = useState(false);
 
@@ -103,18 +93,22 @@ const Section = ({ section, index }) => {
         <FaTerminal className="text-green-400 mr-2" />
         <span className="text-gray-300">{section.title}</span>
       </div>
-      <TabSwitcher activeTab={activeTab} setActiveTab={setActiveTab} index={index} />
+      <TabSwitcher activeTab={activeTab} setActiveTab={setActiveTab} />
       <div className="relative bg-gray-950 p-4 rounded-b-md border border-gray-700 overflow-x-auto">
         {activeTab === "code" ? (
-          <pre className="text-gray-200">
-            <code className="whitespace-pre-wrap">{section.code}</code>
-          </pre>
+          <>
+            <pre className="text-gray-200">
+              <code className="whitespace-pre-wrap">{section.code}</code>
+            </pre>
+            <CopyButton text={section.code} copied={copied} onCopy={handleCopy} />
+          </>
         ) : (
-          <div className="prose prose-invert max-w-none text-gray-300 whitespace-pre-wrap">
-            {section.preview}
-          </div>
+          // Render the HTML as active preview with proper paragraph spacing
+          <div
+            className="prose prose-invert max-w-none text-gray-300"
+            dangerouslySetInnerHTML={{ __html: section.code }}
+          />
         )}
-        {activeTab === "code" && <CopyButton text={section.code} copied={copied} onCopy={handleCopy} />}
       </div>
     </div>
   );
@@ -138,7 +132,7 @@ const About = () => {
         </h1>
       </div>
       {sections.map((section, index) => (
-        <Section key={index} section={section} index={index} />
+        <Section key={index} section={section} />
       ))}
     </div>
   );
