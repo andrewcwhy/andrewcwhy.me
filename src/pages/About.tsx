@@ -159,8 +159,6 @@ const sections: SectionData[] = [
       <p class="mb-4">The frontend is built with React, TypeScript, Tailwind CSS, Vite.</p>
       <h3 class="mb-2">Backend:</h3>
       <p class="mb-4">There is no backend.</p>
-      <h3 class="mb-2">Tools</h3>
-      <p class="mb-4">Utilizing GitHub Actions and GitHub Pages efficient workflow from development to deployment.</p>
     </div>`,
   },
   {
