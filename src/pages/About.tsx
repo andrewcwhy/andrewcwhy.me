@@ -37,7 +37,6 @@ const sections = [
     },
     {
         title: 'Contact',
-        // Updated the code snippet to include React (JSX) code.
         code: `
     <div className="contact">
       <h2 className="mb-4">Follow me</h2>
@@ -90,7 +89,7 @@ const TabSwitcher = ({ activeTab, setActiveTab }) => (
     </div>
 )
 
-const Section = ({ section }) => {
+const Section = ({ section, isLast }) => {
     const [activeTab, setActiveTab] = useState('preview')
     const [copied, setCopied] = useState(false)
 
@@ -105,7 +104,7 @@ const Section = ({ section }) => {
     }
 
     return (
-        <div className="mb-6">
+        <div className={`${isLast ? '' : 'mb-6'}`}>
             <div className="flex items-center bg-gray-800 px-3 py-1 rounded-t-md border border-gray-700 text-sm">
                 <FaTerminal className="text-green-400 mr-2" />
                 <span className="text-gray-300">{section.title}</span>
@@ -140,7 +139,8 @@ const Section = ({ section }) => {
     )
 }
 
-const About = () => {
+
+export default function About(){
     return (
         <div className="max-w-3xl mx-auto p-6">
             <header className="flex items-center space-x-2 border-b border-gray-700 pb-4 mb-4">
@@ -159,10 +159,12 @@ const About = () => {
                 </h1>
             </header>
             {sections.map((section, index) => (
-                <Section key={index} section={section} />
+                <Section
+                    key={index}
+                    section={section}
+                    isLast={index === sections.length - 1}
+                />
             ))}
         </div>
     )
 }
-
-export default About
