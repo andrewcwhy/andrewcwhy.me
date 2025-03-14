@@ -6,9 +6,15 @@ function Navbar() {
       <div className="container mx-auto flex justify-between items-center">
         <p className="text-xl font-bold">andrewcwhy</p>
         <div className="space-x-4">
-          <Link to="/" className="text-blue-400 hover:underline">Home</Link>
-          <Link to="/about" className="text-blue-400 hover:underline">ABOUTME.md</Link>
-          <Link to="/contact" className="text-blue-400 hover:underline">Contact</Link>
+          <Link to="/" className="text-blue-400 hover:underline">
+            Home
+          </Link>
+          <Link to="/about" className="text-blue-400 hover:underline">
+            ABOUTME.md
+          </Link>
+          <Link to="/contact" className="text-blue-400 hover:underline">
+            Contact
+          </Link>
         </div>
       </div>
     </nav>
