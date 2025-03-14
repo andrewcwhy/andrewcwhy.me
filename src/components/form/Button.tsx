@@ -11,8 +11,7 @@ const Button: React.FC<ButtonProps> = ({
     variant = 'primary',
     className,
 }) => {
-    const baseStyles =
-        'px-6 py-3 font-semibold rounded-lg transition border'
+    const baseStyles = 'px-6 py-3 font-semibold rounded-lg transition border'
     const variantStyles =
         variant === 'primary'
             ? 'bg-gray-700 border-gray-600 hover:bg-gray-600 text-white'
