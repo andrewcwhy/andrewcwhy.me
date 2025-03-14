@@ -1,11 +1,11 @@
-import ContactForm from "@/components/ContactForm";
+import ContactForm from '@/components/ContactForm'
 
 const Contact = () => {
-  return (
-    <section>
-      <ContactForm />
-    </section>
-  );
-};
+    return (
+        <section>
+            <ContactForm />
+        </section>
+    )
+}
 
-export default Contact;
+export default Contact
