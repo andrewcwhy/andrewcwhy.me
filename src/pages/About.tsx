@@ -142,8 +142,8 @@ const Section = ({ section }) => {
 
 const About = () => {
     return (
-        <div className="max-w-3xl mx-auto mt-10 p-6">
-            <div className="flex items-center space-x-2 border-b border-gray-700 pb-4 mb-4">
+        <div className="max-w-3xl mx-auto p-6">
+            <header className="flex items-center space-x-2 border-b border-gray-700 pb-4 mb-4">
                 <FaBookOpen className="text-green-400 text-lg" />
                 <h1 className="text-lg text-gray-300">
                     <a
@@ -157,7 +157,7 @@ const About = () => {
                     </a>
                     /<span className="text-gray-400">About.tsx</span>
                 </h1>
-            </div>
+            </header>
             {sections.map((section, index) => (
                 <Section key={index} section={section} />
             ))}
