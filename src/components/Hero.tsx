@@ -7,7 +7,12 @@ interface HeroProps {
   buttonLink?: string;
 }
 
-const Hero: React.FC<HeroProps> = ({ title, subtitle, buttonText, buttonLink }) => {
+const Hero: React.FC<HeroProps> = ({
+  title,
+  subtitle,
+  buttonText,
+  buttonLink,
+}) => {
   return (
     <section className="h-screen flex justify-center items-center bg-gray-900 text-white text-center font-mono">
       <div className="w-full max-w-2xl p-6 bg-gray-800 border border-gray-700 rounded shadow-lg">
