@@ -1,12 +1,11 @@
 import Hero from '@/components/Hero'
 import SocialLinks from '@/components/SocialLinks'
-import { useEffect } from 'react';
-
+import { useEffect } from 'react'
 
 export default function Home() {
     useEffect(() => {
-        document.title = "Home - andrewcwhy"; // Set page title dynamically
-    }, []);
+        document.title = 'Home - andrewcwhy' // Set page title dynamically
+    }, [])
 
     return (
         <>
