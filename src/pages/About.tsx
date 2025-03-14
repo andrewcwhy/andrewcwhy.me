@@ -17,7 +17,7 @@ const sections = [
       <p class="mb-4">I'm Andrew C. Young, a dedicated web developer and cybersecurity enthusiast with a passion for building modern web applications and securing digital assets.</p>
       <p class="mb-4">Currently, I'm pursuing a degree in Computer Science at UCF, where I immerse myself in both development and cybersecurity studies.</p>
       <p>My journey is all about learning, growing, and creating secure digital experiences that stand out.</p>
-    </div>`
+    </div>`,
   },
   {
     title: "Tech Stack",
@@ -32,7 +32,7 @@ const sections = [
       <p class="mb-4">Utilizing Vite, GitHub Actions, and Docker helps us maintain an efficient workflow from development to deployment.</p>
       <h3 class="mb-2">Cybersecurity</h3>
       <p>Our commitment to security is demonstrated through practices and tools centered around Linux, Networking, C programming, and Python.</p>
-    </div>`
+    </div>`,
   },
   {
     title: "Contact",
@@ -41,7 +41,7 @@ const sections = [
       <h2 class="mb-4">Follow me</h2>
       <p class="mb-4">Website: <a href="https://andrewcwhy.me" target="_blank" rel="noopener noreferrer">andrewcwhy.me</a></p>
       <p>GitHub: <a href="https://github.com/andrewcwhy" target="_blank" rel="noopener noreferrer">acy2k5</a></p>
-</div>`
+</div>`,
   },
 ];
 
@@ -59,7 +59,9 @@ const TabSwitcher = ({ activeTab, setActiveTab }) => (
     <button
       onClick={() => setActiveTab("preview")}
       className={`px-4 py-2 text-sm ${
-        activeTab !== "code" ? "text-blue-400 border-b-2 border-blue-400" : "text-gray-400"
+        activeTab !== "code"
+          ? "text-blue-400 border-b-2 border-blue-400"
+          : "text-gray-400"
       } hover:text-blue-300`}
     >
       <FaEye className="inline-block mr-1" /> Preview
@@ -67,7 +69,9 @@ const TabSwitcher = ({ activeTab, setActiveTab }) => (
     <button
       onClick={() => setActiveTab("code")}
       className={`px-4 py-2 text-sm ${
-        activeTab === "code" ? "text-blue-400 border-b-2 border-blue-400" : "text-gray-400"
+        activeTab === "code"
+          ? "text-blue-400 border-b-2 border-blue-400"
+          : "text-gray-400"
       } hover:text-blue-300`}
     >
       <FaCode className="inline-block mr-1" /> Code
@@ -102,7 +106,11 @@ const Section = ({ section }) => {
             <pre className="text-gray-200">
               <code className="whitespace-pre-wrap">{section.code}</code>
             </pre>
-            <CopyButton text={section.code} copied={copied} onCopy={handleCopy} />
+            <CopyButton
+              text={section.code}
+              copied={copied}
+              onCopy={handleCopy}
+            />
           </>
         ) : (
           // Render the HTML as active preview with proper paragraph spacing
