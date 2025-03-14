@@ -25,7 +25,7 @@ const Hero: React.FC<HeroProps> = ({
                 <h1 className="text-4xl font-bold mb-2">{title}</h1>
                 <p className="text-lg text-gray-400 mb-4">{subtitle}</p>
                 {buttonText && buttonLink && (
-                    <a href={buttonLink}>
+                    <a href={buttonLink} target="_blank" rel="noopener noreferrer">
                         <Button text={buttonText} />
                     </a>
                 )}
