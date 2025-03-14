@@ -7,7 +7,7 @@ function Navbar() {
         <p className="text-xl font-bold">andrewcwhy</p>
         <div className="space-x-4">
           <Link to="/" className="hover:underline">Home</Link>
-          <Link to="/about" className="hover:underline">About</Link>
+          <Link to="/about" className="hover:underline">ABOUTME.md</Link>
           <Link to="/contact" className="hover:underline">Contact</Link>
         </div>
       </div>
