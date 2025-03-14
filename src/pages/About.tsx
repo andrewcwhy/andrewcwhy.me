@@ -45,8 +45,12 @@ const sections = [
     </div>`,
         preview: (
             <div className="contact">
-              <h2 className="mb-4">Follow me</h2>
-              <SocialLinks showPlatform={true} showUrl={true} showIcon={true} />
+                <h2 className="mb-4">Follow me</h2>
+                <SocialLinks
+                    showPlatform={true}
+                    showUrl={true}
+                    showIcon={true}
+                />
             </div>
         ),
     },
@@ -125,15 +129,13 @@ const Section = ({ section }) => {
                             onCopy={handleCopy}
                         />
                     </>
+                ) : section.preview ? (
+                    section.preview
                 ) : (
-                    section.preview ? (
-                        section.preview
-                    ) : (
-                        <div
-                            className="prose prose-invert max-w-none text-gray-300"
-                            dangerouslySetInnerHTML={{ __html: section.code }}
-                        />
-                    )
+                    <div
+                        className="prose prose-invert max-w-none text-gray-300"
+                        dangerouslySetInnerHTML={{ __html: section.code }}
+                    />
                 )}
             </div>
         </div>
