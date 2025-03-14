@@ -8,8 +8,8 @@ export default function Home() {
                 <Hero
                     title="Hey, I'm Andrew 👋"
                     subtitle="A student at UCF"
-                    buttonText="Contact Me"
-                    buttonLink="#contact"
+                    buttonText="Resume"
+                    buttonLink="#resume"
                 />
             </main>
         </>
