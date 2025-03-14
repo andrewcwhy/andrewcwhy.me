@@ -9,7 +9,7 @@ export default function Home() {
                     title="Hey, I'm Andrew 👋"
                     subtitle="A student at UCF"
                     buttonText="Resume"
-                    buttonLink="/public/Andrew-Young-Resume.pdf"
+                    buttonLink="https://andrewcwhy.me/Andrew-Young-Resume.pdf"
                 />
             </main>
         </>
