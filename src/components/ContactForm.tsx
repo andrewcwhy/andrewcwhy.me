@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { contactFormSchema, ContactFormData } from '@/schemas/contactForm'
 import ErrorMessage from '@/components/form/ErrorMessage'
-import Label from '@/components/form/Label';
-import Input from '@/components/form/Input';
-import TextArea from '@/components/form/TextArea';
+import Label from '@/components/form/Label'
+import Input from '@/components/form/Input'
+import TextArea from '@/components/form/TextArea'
 
 function ContactForm() {
     const [formData, setFormData] = useState<ContactFormData>({
@@ -15,6 +15,12 @@ function ContactForm() {
 
     const [errors, setErrors] = useState<Record<string, string | undefined>>({})
 
+    /**
+     * Handles changes to the input fields and updates form data.
+     * Also validates input fields as the user types.
+     *
+     * @param {React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>} e - The change event triggered by input fields.
+     */
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
@@ -25,6 +31,7 @@ function ContactForm() {
             ...formData,
             [e.target.name]: e.target.value,
         })
+
         if (!validationResult.success) {
             setErrors(
                 validationResult.error.flatten().fieldErrors as Record<
@@ -37,6 +44,11 @@ function ContactForm() {
         }
     }
 
+    /**
+     * Handles the form submission, validating the data before submitting.
+     *
+     * @param {React.FormEvent<HTMLFormElement>} e - The form submission event.
+     */
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
@@ -99,6 +111,7 @@ function ContactForm() {
                 />
                 <ErrorMessage message={errors.subject} />
             </div>
+
             <div>
                 <Label htmlFor="message">Message</Label>
                 <TextArea
