@@ -16,4 +16,5 @@ export default defineConfig({
         // Birthdate: 09/07/2005
         port: 9705,
     },
+    base: '/andrewcwhy.me/'
 })

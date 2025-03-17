@@ -1,7 +1,6 @@
 import { socialLinks } from '@/config/social'
 
 interface SocialLinksProps {
-    showUsername?: boolean
     showPlatform?: boolean
     showUrl?: boolean
     showIcon?: boolean
@@ -10,7 +9,6 @@ interface SocialLinksProps {
 
 const SocialLinks = ({
     showPlatform = true,
-    showUsername = true,
     showUrl = false,
     showIcon = false,
     hideHttps = false,
