@@ -1,13 +1,13 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from 'react-router-dom'
 
 export default function Nav() {
-    const location = useLocation();
+    const location = useLocation()
 
     const navLinks = [
-        { name: "Home", path: "/" },
-        { name: "About", path: "/about" },
-        { name: "Contact", path: "/contact" },
-    ];
+        { name: 'Home', path: '/' },
+        { name: 'About', path: '/about' },
+        { name: 'Contact', path: '/contact' },
+    ]
 
     return (
         <nav className="bg-gray-900 p-4 text-gray-200 border-b border-gray-700">
@@ -20,8 +20,11 @@ export default function Nav() {
                         <li key={link.path}>
                             <Link
                                 to={link.path}
-                                className={`hover:text-blue-400 ${location.pathname === link.path ? "text-blue-400" : "text-gray-200"
-                                    }`}
+                                className={`hover:text-blue-400 ${
+                                    location.pathname === link.path
+                                        ? 'text-blue-400'
+                                        : 'text-gray-200'
+                                }`}
                             >
                                 {link.name}
                             </Link>
@@ -29,6 +32,6 @@ export default function Nav() {
                     ))}
                 </ul>
             </div>
-        </nav >
+        </nav>
     )
 }
