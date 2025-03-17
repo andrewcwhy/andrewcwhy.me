@@ -1,12 +1,12 @@
 import { z } from 'zod'
 
 // Define validation constraints for reusability
-const NAME_MAX = 50;
-const EMAIL_MAX = 255;
-const SUBJECT_MIN = 5;
-const SUBJECT_MAX = 100;
-const MESSAGE_MIN = 30;
-const MESSAGE_MAX = 1000;
+const NAME_MAX = 50
+const EMAIL_MAX = 255
+const SUBJECT_MIN = 5
+const SUBJECT_MAX = 100
+const MESSAGE_MIN = 30
+const MESSAGE_MAX = 1000
 
 export const contactFormSchema = z.object({
     name: z
@@ -30,6 +30,6 @@ export const contactFormSchema = z.object({
         .trim()
         .min(MESSAGE_MIN, `Message must be at least ${MESSAGE_MIN} characters`)
         .max(MESSAGE_MAX, `Message must be at most ${MESSAGE_MAX} characters`),
-});
+})
 
-export type ContactFormData = z.infer<typeof contactFormSchema>;
+export type ContactFormData = z.infer<typeof contactFormSchema>
