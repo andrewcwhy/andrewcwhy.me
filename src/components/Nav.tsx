@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router'
 
 export default function Nav() {
     const location = useLocation()
@@ -12,13 +12,13 @@ export default function Nav() {
     return (
         <nav className="bg-gray-900 p-4 text-gray-200 border-b border-gray-700">
             <div className="container mx-auto flex justify-between items-center">
-                <Link to="/" className="text-xl font-bold text-white">
+                <NavLink to="/" className="text-xl font-bold text-white">
                     andrewcwhy
-                </Link>
+                </NavLink>
                 <ul className="flex items-center gap-6">
                     {navLinks.map((link) => (
                         <li key={link.path}>
-                            <Link
+                            <NavLink
                                 to={link.path}
                                 className={`hover:text-blue-400 ${
                                     location.pathname === link.path
@@ -27,7 +27,7 @@ export default function Nav() {
                                 }`}
                             >
                                 {link.name}
-                            </Link>
+                            </NavLink>
                         </li>
                     ))}
                 </ul>

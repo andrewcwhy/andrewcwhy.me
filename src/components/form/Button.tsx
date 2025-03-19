@@ -5,13 +5,14 @@ interface ButtonProps {
     className?: string
 }
 
-const Button: React.FC<ButtonProps> = ({
+export default function Button({
     text,
     onClick,
     variant = 'primary',
     className,
-}) => {
+}: ButtonProps) {
     const baseStyles = 'px-6 py-3 font-semibold rounded-lg transition border'
+    
     const variantStyles =
         variant === 'primary'
             ? 'bg-gray-700 border-gray-600 hover:bg-gray-600 text-white'
@@ -26,5 +27,3 @@ const Button: React.FC<ButtonProps> = ({
         </button>
     )
 }
-
-export default Button

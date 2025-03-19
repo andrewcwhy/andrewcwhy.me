@@ -7,12 +7,12 @@ interface SocialLinksProps {
     hideHttps?: boolean
 }
 
-const SocialLinks = ({
+export default function({
     showPlatform = true,
     showUrl = false,
     showIcon = false,
     hideHttps = false,
-}: SocialLinksProps) => {
+}: SocialLinksProps) {
     return (
         <ul className="space-y-2">
             {Object.values(socialLinks).map(
@@ -62,4 +62,3 @@ const SocialLinks = ({
     )
 }
 
-export default SocialLinks

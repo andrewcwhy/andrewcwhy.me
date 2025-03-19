@@ -5,7 +5,7 @@ import Label from '@/components/form/Label'
 import Input from '@/components/form/Input'
 import TextArea from '@/components/form/TextArea'
 
-function ContactForm() {
+export default function ContactForm() {
     const [formData, setFormData] = useState<ContactFormData>({
         name: '',
         email: '',
@@ -132,5 +132,3 @@ function ContactForm() {
         </form>
     )
 }
-
-export default ContactForm
