@@ -38,6 +38,8 @@ jobs:
               run: bun install
             - name: Build
               run: bunx --bun vite build
+            - name: Add CNAME file
+              run: echo "andrewcwhy.me" > ./build/CNAME
             - name: Setup Pages
               uses: actions/configure-pages@v4
             - name: Upload artifact
