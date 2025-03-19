@@ -12,6 +12,14 @@ export default function Home() {
                     buttonLink="https://andrewcwhy.me/Andrew-Young-Resume.pdf"
                 />
             </main>
+            <div className="prose max-w-4xl">
+        <h1>Hello</h1>
+        <p>This is a test paragraph.</p>
+        <ul>
+            <li>Item One</li>
+            <li>Item Two</li>
+        </ul>
+    </div>
         </>
     )
 }
