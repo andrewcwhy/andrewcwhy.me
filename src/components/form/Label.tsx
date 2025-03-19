@@ -1,6 +1,6 @@
 interface LabelProps {
-    children: React.ReactNode;
-    htmlFor: string;
+    children: React.ReactNode
+    htmlFor: string
 }
 
 export default function Label({ children, htmlFor }: LabelProps) {
@@ -8,5 +8,5 @@ export default function Label({ children, htmlFor }: LabelProps) {
         <label className="block mb-1" htmlFor={htmlFor}>
             {children}
         </label>
-    );
+    )
 }
