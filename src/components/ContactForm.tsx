@@ -72,7 +72,7 @@ export default function ContactForm() {
             action="https://formsubmit.co/acydeveloper05@gmail.com"
             method="POST"
             onSubmit={handleSubmit}
-            className="bg-gray-950 border rounded-md p-6 space-y-4 border-gray-700"
+            className="bg-gray-950 border text-white rounded-md p-6 space-y-4 border-gray-700"
         >
             <input type="hidden" name="_captcha" value="false" />
 
