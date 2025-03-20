@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 
 body {
-    background-color: var(--color-gray-900) /* oklch(0.21 0.034 264.665) = #101828 */;
+    background-color: var(--color-gray-900)
+        /* oklch(0.21 0.034 264.665) = #101828 */;
 }
