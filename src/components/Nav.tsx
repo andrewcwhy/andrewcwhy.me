@@ -1,8 +1,6 @@
-import { NavLink, useLocation } from 'react-router'
+import { NavLink } from 'react-router'
 
 export default function Nav() {
-    const location = useLocation()
-
     const navLinks = [
         { name: 'Home', path: '/' },
         { name: 'About', path: '/about' },
@@ -20,11 +18,9 @@ export default function Nav() {
                         <li key={link.path}>
                             <NavLink
                                 to={link.path}
-                                className={`hover:text-blue-400 ${
-                                    location.pathname === link.path
-                                        ? 'text-blue-400'
-                                        : 'text-gray-200'
-                                }`}
+                                className={({ isActive }) =>
+                                    `hover:text-blue-400 ${isActive ? 'text-blue-400' : 'text-gray-200'}`
+                                }
                             >
                                 {link.name}
                             </NavLink>
