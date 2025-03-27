@@ -92,11 +92,11 @@ const Section: React.FC<SectionProps> = ({ section, isLast }) => {
     }
 
     return (
-        <div className={`${isLast ? '' : 'mb-6'}`}>
-            <div className="flex items-center bg-gray-800 px-3 py-1 rounded-t-md border border-gray-700 text-sm">
+        <section>
+            <header className="flex items-center bg-gray-800 px-3 py-1 rounded-t-md border border-gray-700 text-sm">
                 <FaTerminal className="text-green-400 mr-2" />
                 <span className="text-gray-300">{section.title}</span>
-            </div>
+            </header>
             <TabSwitcher activeTab={activeTab} setActiveTab={setActiveTab} />
             <div className="relative bg-gray-950 p-4 rounded-b-md border border-gray-700 overflow-x-auto">
                 {activeTab === 'code' ? (
@@ -117,7 +117,7 @@ const Section: React.FC<SectionProps> = ({ section, isLast }) => {
                     />
                 )}
             </div>
-        </div>
+        </section>
     )
 }
 
@@ -166,8 +166,8 @@ const sections: SectionData[] = [
 
 export default function About() {
     return (
-        <div className="max-w-3xl mx-auto p-6">
-            <header className="flex items-center space-x-2 border-b border-gray-700 pb-4 mb-4">
+        <div className="max-w-3xl mx-auto flex flex-col gap-8">
+            <header className="flex items-center space-x-2 border-b border-gray-700 pb-4">
                 <FaBookOpen className="text-green-400 text-lg" />
                 <h1 className="text-lg text-gray-300">
                     <a
