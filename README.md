@@ -23,7 +23,7 @@ This website is built using:
 - **Styling:** Tailwind CSS
 - **Build Tools:** Vite + Bun
 - **Code Quality:** ESLint + Prettier
-- **Hosting:** GitHub Pages
+- **Hosting:** Netlify
 
 ## 📬 Connect with Me
 
