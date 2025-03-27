@@ -7,7 +7,7 @@ interface SocialLinksProps {
     hideHttps?: boolean
 }
 
-export default function({
+export default function ({
     showPlatform = true,
     showUrl = false,
     showIcon = false,
@@ -61,4 +61,3 @@ export default function({
         </ul>
     )
 }
-
