@@ -1,34 +1,22 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { NavLink } from 'react-router'
 import { HiMenu, HiX } from 'react-icons/hi'
+import { useHideOnScroll } from '@/hooks/useHideOnScroll'
 
 export default function Nav() {
     const [menuOpen, setMenuOpen] = useState(false)
-    const [showNav, setShowNav] = useState(true)
-    const [lastScrollY, setLastScrollY] = useState(0)
+    const showNav = useHideOnScroll()
 
-    const navLinks = [
+    const links = [
         { name: 'Home', path: '/' },
         { name: 'About', path: '/about' },
         { name: 'Contact', path: '/contact' },
         { name: 'Portfolio', path: '/portfolio' },
     ]
 
-    // Hide on scroll down, show on scroll up
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentY = window.scrollY
-            setShowNav(currentY < lastScrollY || currentY < 10)
-            setLastScrollY(currentY)
-        }
-
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [lastScrollY])
-
     return (
         <nav
-            className={`bg-gray-900 text-gray-200 border-b border-gray-700 fixed w-full z-50 transition-transform duration-300 ${
+            className={`bg-gray-900 text-gray-200 border-b border-gray-700 fixed inset-x-0 z-50 transition-transform duration-300 ${
                 showNav ? 'translate-y-0' : '-translate-y-full'
             }`}
         >
@@ -39,7 +27,7 @@ export default function Nav() {
 
                 {/* Desktop Navigation */}
                 <ul className="hidden md:flex items-center gap-6">
-                    {navLinks.map((link) => (
+                    {links.map((link) => (
                         <li key={link.path}>
                             <NavLink
                                 to={link.path}
@@ -74,7 +62,7 @@ export default function Nav() {
                 }`}
             >
                 <ul className="flex flex-col p-4 gap-6">
-                    {navLinks.map((link) => (
+                    {links.map((link) => (
                         <li key={link.path}>
                             <NavLink
                                 to={link.path}
