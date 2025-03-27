@@ -5,7 +5,7 @@ export default function Nav() {
         { name: 'Home', path: '/' },
         { name: 'About', path: '/about' },
         { name: 'Contact', path: '/contact' },
-        { name: 'Projects', path: '/projects' },
+        { name: 'Portfolio', path: '/portfolio' },
     ]
 
     return (
