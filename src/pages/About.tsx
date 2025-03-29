@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import { FaBookOpen, FaTerminal, FaCode, FaEye } from 'react-icons/fa'
 import { socialLinks } from '@/config/social'
@@ -52,7 +51,6 @@ function TabSwitcher({ activeTab, setActiveTab }: TabSwitcherProps) {
     )
 }
 
-
 function Section({ section }: SectionProps) {
     const [activeTab, setActiveTab] = useState<'preview' | 'code'>('preview')
 
@@ -71,7 +69,11 @@ function Section({ section }: SectionProps) {
                                 {section.code}
                             </code>
                         </pre>
-                        <CopyButton className="absolute top-2 right-2" textToCopy={section.code}  showIcon={false} />
+                        <CopyButton
+                            className="absolute top-2 right-2"
+                            textToCopy={section.code}
+                            showIcon={false}
+                        />
                     </>
                 ) : section.preview ? (
                     section.preview

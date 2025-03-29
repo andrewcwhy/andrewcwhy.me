@@ -15,11 +15,11 @@ export default function CopyButton({
     showIcon = true,
     className = '',
 }: CopyButtonProps) {
-    const [copy, isCopied] = useCopyToClipboard()
+    const [isCopied, handleCopy] = useCopyToClipboard()
 
     return (
         <button
-            onClick={() => copy(textToCopy)}
+            onClick={() => handleCopy(textToCopy)}
             className={`flex items-center gap-2 px-3 py-1.5 rounded-md border bg-gray-800 text-white hover:bg-gray-700 transition ${className}`}
         >
             {showIcon &&

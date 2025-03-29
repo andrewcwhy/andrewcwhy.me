@@ -37,19 +37,15 @@ You can find me at:
 
 Built with ❤️ by **ACY**
 
-
-
-
-
 const CopyButton: React.FC<CopyButtonProps> = ({ copied, onCopy }) => (
-    <button
+<button
         onClick={onCopy}
         className="absolute top-2 right-2 text-gray-400 hover:text-white transition"
     >
-        {copied ? (
-            <FaClipboardCheck className="text-green-400" />
-        ) : (
-            <FaClipboard />
-        )}
-    </button>
+{copied ? (
+<FaClipboardCheck className="text-green-400" />
+) : (
+<FaClipboard />
+)}
+</button>
 )
