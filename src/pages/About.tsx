@@ -1,14 +1,10 @@
+
 import { useState } from 'react'
-import {
-    FaBookOpen,
-    FaClipboard,
-    FaClipboardCheck,
-    FaTerminal,
-    FaCode,
-    FaEye,
-} from 'react-icons/fa'
+import { FaBookOpen, FaTerminal, FaCode, FaEye } from 'react-icons/fa'
 import { socialLinks } from '@/config/social'
 import SocialLinks from '@/components/SocialLinks'
+import CopyButton from '@/components/CopyButton'
+const github = socialLinks.github
 
 interface SectionData {
     title: string
@@ -16,33 +12,17 @@ interface SectionData {
     preview?: React.ReactNode
 }
 
-interface CopyButtonProps {
-    copied: boolean
-    onCopy: () => void
+interface SectionProps {
+    section: SectionData
+    isLast: boolean
 }
-
-const CopyButton: React.FC<CopyButtonProps> = ({ copied, onCopy }) => (
-    <button
-        onClick={onCopy}
-        className="absolute top-2 right-2 text-gray-400 hover:text-white transition"
-    >
-        {copied ? (
-            <FaClipboardCheck className="text-green-400" />
-        ) : (
-            <FaClipboard />
-        )}
-    </button>
-)
 
 interface TabSwitcherProps {
     activeTab: 'preview' | 'code'
     setActiveTab: (tab: 'preview' | 'code') => void
 }
 
-const TabSwitcher: React.FC<TabSwitcherProps> = ({
-    activeTab,
-    setActiveTab,
-}) => {
+function TabSwitcher({ activeTab, setActiveTab }: TabSwitcherProps) {
     const handlePreviewClick = () => setActiveTab('preview')
     const handleCodeClick = () => setActiveTab('code')
 
@@ -72,24 +52,9 @@ const TabSwitcher: React.FC<TabSwitcherProps> = ({
     )
 }
 
-interface SectionProps {
-    section: SectionData
-    isLast: boolean
-}
 
-const Section: React.FC<SectionProps> = ({ section, isLast }) => {
+function Section({ section }: SectionProps) {
     const [activeTab, setActiveTab] = useState<'preview' | 'code'>('preview')
-    const [copied, setCopied] = useState<boolean>(false)
-
-    const handleCopy = async () => {
-        try {
-            await navigator.clipboard.writeText(section.code)
-            setCopied(true)
-            setTimeout(() => setCopied(false), 2000)
-        } catch (err) {
-            console.error('Failed to copy:', err)
-        }
-    }
 
     return (
         <section>
@@ -106,7 +71,7 @@ const Section: React.FC<SectionProps> = ({ section, isLast }) => {
                                 {section.code}
                             </code>
                         </pre>
-                        <CopyButton copied={copied} onCopy={handleCopy} />
+                        <CopyButton className="absolute top-2 right-2" textToCopy={section.code}  showIcon={false} />
                     </>
                 ) : section.preview ? (
                     section.preview
@@ -121,7 +86,34 @@ const Section: React.FC<SectionProps> = ({ section, isLast }) => {
     )
 }
 
-const github = socialLinks.github
+export default function About() {
+    return (
+        <div className="max-w-3xl mx-auto flex flex-col gap-8">
+            <header className="flex items-center space-x-2 border-b border-gray-700 pb-4">
+                <FaBookOpen className="text-green-400 text-lg" />
+                <h1 className="text-lg text-gray-300">
+                    <a
+                        href={github.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-400 hover:underline"
+                        title="Visit my GitHub profile"
+                    >
+                        {github.username}
+                    </a>
+                    /<span className="text-gray-400">About.tsx</span>
+                </h1>
+            </header>
+            {sections.map((section, index) => (
+                <Section
+                    key={index}
+                    section={section}
+                    isLast={index === sections.length - 1}
+                />
+            ))}
+        </div>
+    )
+}
 
 const sections: SectionData[] = [
     {
@@ -163,32 +155,3 @@ const sections: SectionData[] = [
         ),
     },
 ]
-
-export default function About() {
-    return (
-        <div className="max-w-3xl mx-auto flex flex-col gap-8">
-            <header className="flex items-center space-x-2 border-b border-gray-700 pb-4">
-                <FaBookOpen className="text-green-400 text-lg" />
-                <h1 className="text-lg text-gray-300">
-                    <a
-                        href={github.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-400 hover:underline"
-                        title="Visit my GitHub profile"
-                    >
-                        {github.username}
-                    </a>
-                    /<span className="text-gray-400">About.tsx</span>
-                </h1>
-            </header>
-            {sections.map((section, index) => (
-                <Section
-                    key={index}
-                    section={section}
-                    isLast={index === sections.length - 1}
-                />
-            ))}
-        </div>
-    )
-}
