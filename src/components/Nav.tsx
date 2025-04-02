@@ -1,13 +1,13 @@
-import { useState, useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { NavLink } from 'react-router'
 import { HiMenu, HiX } from 'react-icons/hi'
 import { useToggle } from '@/hooks/useToggle'
 import { useClickAway } from '@/hooks/useClickAway'
+import { useHideOnScroll } from '@/hooks/useHideOnScroll'
 
 export default function Nav() {
     const [isMenuOpen, toggleMenu] = useToggle()
-    const [showNav, setShowNav] = useState(true)
-    const [lastScrollY, setLastScrollY] = useState(0)
+    const showNav = useHideOnScroll()
     const menuRef = useRef<HTMLDivElement>(null)
 
     const links = [
@@ -16,18 +16,6 @@ export default function Nav() {
         { name: 'Contact', path: '/contact' },
         { name: 'Portfolio', path: '/portfolio' },
     ]
-
-    // Hide on scroll down, show on scroll up
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentY = window.scrollY
-            setShowNav(currentY < lastScrollY || currentY < 10)
-            setLastScrollY(currentY)
-        }
-
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [lastScrollY])
 
     // Close mobile menu when clicking outside
     useClickAway(menuRef, () => {
@@ -77,7 +65,7 @@ export default function Nav() {
 
             {/* Mobile Menu - overlays content */}
             <div
-             ref={menuRef}
+                ref={menuRef}
                 className={`md:hidden absolute top-full left-0 w-full bg-gray-900 border-t border-gray-700 transition-all duration-300 ease-in-out ${
                     isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
                 }`}

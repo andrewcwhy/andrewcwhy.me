@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react'
 
 export function useCopyToClipboard(
-    initialValue: boolean = false
+    initialState: boolean = false,
 ): [isCopied: boolean, handleCopy: (text: string) => void] {
-    const [isCopied, setIsCopied] = useState(initialValue)
+    const [isCopied, setIsCopied] = useState(initialState)
 
     const handleCopy = useCallback((text: string) => {
         navigator.clipboard.writeText(text).then(() => {

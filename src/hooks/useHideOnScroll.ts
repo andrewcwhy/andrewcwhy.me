@@ -1,14 +1,16 @@
-// src/hooks/useHideOnScroll.ts
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
-export function useHideOnScroll(threshold = 10) {
-    const [showNav, setShowNav] = useState(true)
+export function useHideOnScroll(
+    initialState: boolean = true,
+    threshold: number = 10
+): boolean {
+    const [isVisible, setIsVisible] = useState(initialState)
     const [lastScrollY, setLastScrollY] = useState(0)
 
     useEffect(() => {
-        const handleScroll = () => {
+        function handleScroll() {
             const currentY = window.scrollY
-            setShowNav(currentY < lastScrollY || currentY < threshold)
+            setIsVisible(currentY < lastScrollY || currentY < threshold)
             setLastScrollY(currentY)
         }
 
@@ -16,5 +18,5 @@ export function useHideOnScroll(threshold = 10) {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [lastScrollY, threshold])
 
-    return showNav
+    return isVisible
 }
