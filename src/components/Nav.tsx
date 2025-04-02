@@ -1,11 +1,14 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { NavLink } from 'react-router'
 import { HiMenu, HiX } from 'react-icons/hi'
-import { useHideOnScroll } from '@/hooks/useHideOnScroll'
+import { useToggle } from '@/hooks/useToggle'
+import { useClickAway } from '@/hooks/useClickAway'
 
 export default function Nav() {
-    const [menuOpen, setMenuOpen] = useState(false)
-    const showNav = useHideOnScroll()
+    const [isMenuOpen, toggleMenu] = useToggle()
+    const [showNav, setShowNav] = useState(true)
+    const [lastScrollY, setLastScrollY] = useState(0)
+    const menuRef = useRef<HTMLDivElement>(null)
 
     const links = [
         { name: 'Home', path: '/' },
@@ -13,6 +16,23 @@ export default function Nav() {
         { name: 'Contact', path: '/contact' },
         { name: 'Portfolio', path: '/portfolio' },
     ]
+
+    // Hide on scroll down, show on scroll up
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentY = window.scrollY
+            setShowNav(currentY < lastScrollY || currentY < 10)
+            setLastScrollY(currentY)
+        }
+
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [lastScrollY])
+
+    // Close mobile menu when clicking outside
+    useClickAway(menuRef, () => {
+        if (isMenuOpen) toggleMenu()
+    })
 
     return (
         <nav
@@ -47,18 +67,19 @@ export default function Nav() {
 
                 {/* Mobile Toggle Button */}
                 <button
-                    onClick={() => setMenuOpen(!menuOpen)}
+                    onClick={toggleMenu}
                     className="md:hidden text-white"
                     aria-label="Toggle Menu"
                 >
-                    {menuOpen ? <HiX size={28} /> : <HiMenu size={28} />}
+                    {isMenuOpen ? <HiX size={28} /> : <HiMenu size={28} />}
                 </button>
             </div>
 
             {/* Mobile Menu - overlays content */}
             <div
+             ref={menuRef}
                 className={`md:hidden absolute top-full left-0 w-full bg-gray-900 border-t border-gray-700 transition-all duration-300 ease-in-out ${
-                    menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+                    isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
                 }`}
             >
                 <ul className="flex flex-col p-4 gap-6">
@@ -66,7 +87,7 @@ export default function Nav() {
                         <li key={link.path}>
                             <NavLink
                                 to={link.path}
-                                onClick={() => setMenuOpen(false)}
+                                onClick={toggleMenu}
                                 className={({ isActive }) =>
                                     `transition-colors hover:text-blue-400 ${
                                         isActive
