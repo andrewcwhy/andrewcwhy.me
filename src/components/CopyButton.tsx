@@ -1,4 +1,4 @@
-import { useCopyToClipboard } from '@/hooks/useCopyToClipboard'
+import { useCopyToClipboard } from '@/hooks'
 import { ReactNode } from 'react'
 import { FaClipboard, FaClipboardCheck } from 'react-icons/fa'
 

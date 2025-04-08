@@ -1,21 +1,24 @@
 import { useRef } from 'react'
 import { NavLink } from 'react-router'
 import { HiMenu, HiX } from 'react-icons/hi'
-import { useToggle } from '@/hooks/useToggle'
-import { useClickAway } from '@/hooks/useClickAway'
-import { useHideOnScroll } from '@/hooks/useHideOnScroll'
+import { useClickAway, useHideOnScroll, useToggle } from '@/hooks'
+
+interface LinkProps {
+    label: string
+    path: string
+}
+
+const links: LinkProps[] = [
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Contact', path: '/contact' },
+    { label: 'Portfolio', path: '/portfolio' },
+]
 
 export default function Nav() {
     const [isMenuOpen, toggleMenu] = useToggle()
     const showNav = useHideOnScroll()
     const menuRef = useRef<HTMLDivElement>(null)
-
-    const links = [
-        { name: 'Home', path: '/' },
-        { name: 'About', path: '/about' },
-        { name: 'Contact', path: '/contact' },
-        { name: 'Portfolio', path: '/portfolio' },
-    ]
 
     // Close mobile menu when clicking outside
     useClickAway(menuRef, () => {
@@ -47,7 +50,7 @@ export default function Nav() {
                                     }`
                                 }
                             >
-                                {link.name}
+                                {link.label}
                             </NavLink>
                         </li>
                     ))}
@@ -84,7 +87,7 @@ export default function Nav() {
                                     }`
                                 }
                             >
-                                {link.name}
+                                {link.label}
                             </NavLink>
                         </li>
                     ))}

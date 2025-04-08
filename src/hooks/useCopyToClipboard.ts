@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react'
 
 export function useCopyToClipboard(
-    initialState: boolean = false,
+    initialState: boolean = false
 ): [isCopied: boolean, handleCopy: (text: string) => void] {
     const [isCopied, setIsCopied] = useState(initialState)
 
