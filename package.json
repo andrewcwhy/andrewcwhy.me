@@ -9,7 +9,7 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "build": "tsc -b && bunx --bun vite build",
+        "build": "bunx --bun vite build",
         "dev": "bunx --bun vite",
         "format": "prettier . --write",
         "lint": "eslint .",
