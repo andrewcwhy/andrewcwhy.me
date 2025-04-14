@@ -1,6 +1,5 @@
 import { z } from 'zod'
 
-// Define validation constraints for reusability
 const NAME_MAX = 50
 const EMAIL_MAX = 255
 const SUBJECT_MIN = 5

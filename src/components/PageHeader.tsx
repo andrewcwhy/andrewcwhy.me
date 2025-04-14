@@ -9,7 +9,7 @@ export default function PageHeader({ icon: Icon, title }: HeaderProps) {
     const user = 'andrewcwhy'
     const repoName = `${user}.me`
     const profileUrl = `https://github.com/${user}`
-    const fileUrl = `https://github.com/${user}/${repoName}/blob/main/src/pages/${title}.tsx`
+    const fileUrl = `https://github.com/${user}/${repoName}/blob/main/src/routes/${title.toLowerCase()}.tsx`
     const repoUrl = `https://github.com/${user}/${repoName}`
 
     return (
