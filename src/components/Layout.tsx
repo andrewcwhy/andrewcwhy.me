@@ -1,15 +1,15 @@
-import { Outlet } from 'react-router'
-import Nav from '@/components/NavBar'
-import Footer from '@/components/Footer'
+import { Outlet } from "react-router";
+import Nav from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 export default function Layout() {
-    return (
-        <>
-            <Nav />
-            <main className="pt-16">
-                <Outlet />
-            </main>
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <Nav />
+      <main className="pt-16">
+        <Outlet />
+      </main>
+      <Footer />
+    </>
+  );
 }
