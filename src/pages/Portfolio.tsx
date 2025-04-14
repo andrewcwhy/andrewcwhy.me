@@ -1,43 +1,78 @@
 import { useEffect, useState } from 'react'
-import { Repo } from '@/types/github'
-import { fetchRepos } from '@/api/github'
+import { Repo, User } from '@/types/github'
+import { fetchRepos, fetchUser } from '@/api/github'
 
 export default function Projects() {
     const [repos, setRepos] = useState<Repo[]>([])
+    const [user, setUser] = useState<User | null>(null)
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetchRepos()
-            .then(setRepos)
-            .catch((err) => console.error('Error:', err))
+        Promise.all([fetchUser(), fetchRepos()])
+            .then(([userData, repoData]) => {
+                setUser(userData)
+                setRepos(repoData)
+            })
+            .catch((err) => console.error('GitHub API error:', err))
             .finally(() => setLoading(false))
     }, [])
 
     if (loading) {
         return (
-            <div className="min-h-screen flex justify-center items-center text-white">
+            <main className="min-h-screen flex justify-center items-center text-white">
                 <p>Loading projects...</p>
-            </div>
+            </main>
         )
     }
 
+    if (!user) {
+        return (
+            <main className="min-h-screen flex justify-center items-center text-red-500">
+                <p>Failed to load GitHub user data.</p>
+            </main>
+        )
+    }
+
+    const { avatar_url, html_url, login } = user
+
     return (
-        <section className="min-h-screen bg-gray-950 text-white px-6 py-12">
+        <main className="min-h-screen text-white px-6 py-12">
             <div className="max-w-5xl mx-auto">
-                <h1 className="text-4xl font-bold mb-8 text-blue-400">My GitHub Projects</h1>
-                <div className="grid md:grid-cols-2 gap-6">
+                <header className="flex items-center gap-4 mb-10">
+                    <img
+                        src={avatar_url}
+                        alt={`${login}'s avatar`}
+                        className="w-16 h-16 rounded-full border border-gray-700"
+                    />
+                    <h1 className="text-2xl md:text-3xl font-mono text-gray-200 font-semibold leading-tight">
+                        <a
+                            href={html_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline text-blue-400"
+                        >
+                            {login}
+                        </a>
+                        <span className="text-gray-500 mx-1">/</span>
+                        <span>
+                            Projects
+                        </span>
+                    </h1>
+                </header>
+
+                <ul className="grid md:grid-cols-2 gap-6">
                     {repos.map((repo) => (
                         <ProjectCard key={repo.id} repo={repo} />
                     ))}
-                </div>
-            </div>
-        </section>
+                </ul>
+       </div>
+        </main>
     )
 }
 
 function ProjectCard({ repo }: { repo: Repo }) {
     return (
-        <div className="bg-gray-900 border border-gray-700 rounded-lg p-4 shadow-md hover:shadow-lg transition">
+        <li className="bg-gray-900 border border-gray-700 rounded-lg p-4 shadow">
             <h2 className="text-xl font-semibold text-blue-300 mb-1">
                 <a
                     href={repo.html_url}
@@ -48,14 +83,13 @@ function ProjectCard({ repo }: { repo: Repo }) {
                     {repo.name}
                 </a>
             </h2>
-            <p className="text-gray-400 text-sm mb-2">
-                {repo.description || 'No description available.'}
-            </p>
-            <div className="flex items-center justify-between text-sm text-gray-500">
+            {repo.description && (
+                <p className="text-gray-400 text-sm mb-2">{repo.description}</p>
+            )}
+            <footer className="flex justify-between text-sm text-gray-500">
                 <span>🧠 {repo.language || 'N/A'}</span>
                 <span>⭐ {repo.stargazers_count}</span>
-                <span>🍴 {repo.forks_count}</span>
-            </div>
-        </div>
+            </footer>
+        </li>
     )
 }

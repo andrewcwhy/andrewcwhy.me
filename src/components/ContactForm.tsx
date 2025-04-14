@@ -125,6 +125,8 @@ export default function ContactForm() {
 
             <button
                 type="submit"
+                name="_next"
+                value="https://andrewcwhy.me/thank-you"
                 className="w-full bg-blue-400 text-gray-200 font-medium py-2 rounded-md hover:bg-blue-500 transition"
             >
                 Submit

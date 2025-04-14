@@ -5,6 +5,7 @@ import Contact from '@/pages/Contact'
 import Portfolio from '@/pages/Portfolio'
 import NotFound from '@/pages/NotFound'
 import Layout from '@/components/Layout'
+import ThankYou from '@/pages/ThankYou'
 
 export default function App() {
     return (
@@ -14,6 +15,7 @@ export default function App() {
                 <Route path="portfolio" element={<Portfolio />} />
                 <Route path="about" element={<About />} />
                 <Route path="contact" element={<Contact />} />
+                <Route path="thank-you" element={<ThankYou />} />
                 <Route path="*" element={<NotFound />} />
             </Route>
         </Routes>
