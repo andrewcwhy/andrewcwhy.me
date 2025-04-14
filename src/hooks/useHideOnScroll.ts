@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 export function useHideOnScroll(
     initialState: boolean = true,
     threshold: number = 10
-): boolean {
+) {
     const [isVisible, setIsVisible] = useState(initialState)
     const [lastScrollY, setLastScrollY] = useState(0)
 
