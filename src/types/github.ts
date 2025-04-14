@@ -1,8 +1,9 @@
 export interface User {
-    login: string
-    name: string
+    login: string // GitHub username
+    name: string // Full name
     avatar_url: string
-    html_url: string
+    bio: string
+    html_url: string // GitHub profile URL
 }
 export interface Repo {
     id: number

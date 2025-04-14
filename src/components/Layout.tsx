@@ -6,7 +6,7 @@ export default function Layout() {
     return (
         <>
             <Nav />
-            <main className="pt-16">
+            <main className="pt-24 max-w-4xl mx-auto pb-16">
                 <Outlet />
             </main>
             <Footer />

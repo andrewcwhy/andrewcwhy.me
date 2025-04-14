@@ -12,7 +12,7 @@ const links: LinkProps[] = [
     { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' },
-    { label: 'Portfolio', path: '/portfolio' },
+    { label: 'Projects', path: '/projects' },
 ]
 
 export default function Nav() {

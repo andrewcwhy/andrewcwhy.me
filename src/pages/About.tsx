@@ -1,8 +1,11 @@
 import { useState } from 'react'
-import { FaBookOpen, FaTerminal, FaCode, FaEye } from 'react-icons/fa'
+import { FaBook, FaTerminal, FaCode, FaEye } from 'react-icons/fa'
 import { socialLinks } from '@/config/social'
 import SocialLinks from '@/components/SocialLinks'
+import { Helmet } from 'react-helmet-async'
 import CopyButton from '@/components/CopyButton'
+import PageHeader from '@/components/PageHeader'
+
 const github = socialLinks.github
 
 interface SectionData {
@@ -88,32 +91,28 @@ function Section({ section }: SectionProps) {
     )
 }
 
+// This is the main component for the About page
 export default function About() {
     return (
-        <div className="max-w-3xl mx-auto flex flex-col gap-8">
-            <header className="flex items-center space-x-2 border-b border-gray-700 pb-4">
-                <FaBookOpen className="text-green-400 text-lg" />
-                <h1 className="text-lg text-gray-300">
-                    <a
-                        href={github.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-400 hover:underline"
-                        title="Visit my GitHub profile"
-                    >
-                        {github.username}
-                    </a>
-                    /<span className="text-gray-400">About.tsx</span>
-                </h1>
-            </header>
-            {sections.map((section, index) => (
-                <Section
-                    key={index}
-                    section={section}
-                    isLast={index === sections.length - 1}
-                />
-            ))}
-        </div>
+        <>
+            {/* Metadata for the page */}
+            <Helmet>
+                <title>About Me - Andrew Christian Young</title>
+                <meta name="description" content="About me" />
+            </Helmet>
+
+            <PageHeader title="About" icon={FaBook} />
+
+            <div className="flex flex-col gap-8">
+                {sections.map((section, index) => (
+                    <Section
+                        key={index}
+                        section={section}
+                        isLast={index === sections.length - 1}
+                    />
+                ))}
+            </div>
+        </>
     )
 }
 
