@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { contactFormSchema, ContactFormData } from '@/schemas/contactForm'
+import { contactFormSchema, type ContactFormData } from '@/schemas/contactForm'
 import ErrorMessage from '@/components/form/ErrorMessage'
 import Label from '@/components/form/Label'
 import Input from '@/components/form/Input'

@@ -1,12 +1,29 @@
 import { useEffect, useState } from 'react'
-import { Repo, User } from '@/types/github'
+import type { Repo, User } from '@/types'
 import { fetchRepos, fetchUser } from '@/api/github'
-import { Helmet } from 'react-helmet-async'
 import PageHeader from '@/components/PageHeader'
 import { FaGithub } from 'react-icons/fa'
+import { createFileRoute } from '@tanstack/react-router'
+
+export const Route = createFileRoute('/projects')({
+    // This is the route's meta data. It will be used to set the page title and description.
+    component: Projects,
+    // This is the route's meta data. It will be used to set the page title and description.
+    head: () => ({
+        meta: [
+            {
+                title: 'My Projects - Andrew Christian Young',
+            },
+            {
+                name: 'description',
+                content: 'My projects.',
+            },
+        ],
+    }),
+})
 
 // This is the main component for the Projects page
-export default function Projects() {
+function Projects() {
     const [repos, setRepos] = useState<Repo[]>([])
     const [user, setUser] = useState<User | null>(null)
     const [loading, setLoading] = useState(true)
@@ -26,12 +43,6 @@ export default function Projects() {
 
     return (
         <>
-            {/* Metadata for the page */}
-            <Helmet>
-                <title>Projects - Andrew Christian Young</title>
-                <meta name="description" content="My projects" />
-            </Helmet>
-
             <PageHeader title="Projects" icon={FaGithub} />
 
             <ul className="grid md:grid-cols-2 gap-6">

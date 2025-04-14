@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { NavLink } from 'react-router'
+import { Link } from '@tanstack/react-router'
 import { HiMenu, HiX } from 'react-icons/hi'
 import { useClickAway, useHideOnScroll, useToggle } from '@/hooks'
 
@@ -32,26 +32,20 @@ export default function Nav() {
             }`}
         >
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-                <NavLink to="/" className="text-xl font-bold text-white">
+                <Link to="/" className="text-xl font-bold text-white">
                     andrewcwhy
-                </NavLink>
+                </Link>
 
                 {/* Desktop Navigation */}
                 <ul className="hidden md:flex items-center gap-6">
                     {links.map((link) => (
                         <li key={link.path}>
-                            <NavLink
+                            <Link
                                 to={link.path}
-                                className={({ isActive }) =>
-                                    `transition-colors hover:text-blue-400 ${
-                                        isActive
-                                            ? 'text-blue-400'
-                                            : 'text-gray-200'
-                                    }`
-                                }
+                                className='transition-colors hover:text-blue-400'
                             >
                                 {link.label}
-                            </NavLink>
+                            </Link>
                         </li>
                     ))}
                 </ul>
@@ -76,19 +70,13 @@ export default function Nav() {
                 <ul className="flex flex-col p-4 gap-6">
                     {links.map((link) => (
                         <li key={link.path}>
-                            <NavLink
+                            <Link
                                 to={link.path}
                                 onClick={toggleMenu}
-                                className={({ isActive }) =>
-                                    `transition-colors hover:text-blue-400 ${
-                                        isActive
-                                            ? 'text-blue-400'
-                                            : 'text-gray-200'
-                                    }`
-                                }
+                                className='transition-colors hover:text-blue-400'
                             >
                                 {link.label}
-                            </NavLink>
+                            </Link>
                         </li>
                     ))}
                 </ul>

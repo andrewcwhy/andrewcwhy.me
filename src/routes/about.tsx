@@ -2,9 +2,24 @@ import { useState } from 'react'
 import { FaBook, FaTerminal, FaCode, FaEye } from 'react-icons/fa'
 import { socialLinks } from '@/config/social'
 import SocialLinks from '@/components/SocialLinks'
-import { Helmet } from 'react-helmet-async'
+import { createFileRoute } from '@tanstack/react-router'
 import CopyButton from '@/components/CopyButton'
 import PageHeader from '@/components/PageHeader'
+
+export const Route = createFileRoute('/about')({
+    component: About,
+    head: () => ({
+        meta: [
+            {
+                title: 'About Me - Andrew Christian Young',
+            },
+            {
+                name: 'description',
+                content: 'About me.',
+            },
+        ],
+    }),
+})
 
 const github = socialLinks.github
 
@@ -92,15 +107,9 @@ function Section({ section }: SectionProps) {
 }
 
 // This is the main component for the About page
-export default function About() {
+function About() {
     return (
         <>
-            {/* Metadata for the page */}
-            <Helmet>
-                <title>About Me - Andrew Christian Young</title>
-                <meta name="description" content="About me" />
-            </Helmet>
-
             <PageHeader title="About" icon={FaBook} />
 
             <div className="flex flex-col gap-8">
