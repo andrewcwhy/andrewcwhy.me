@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { Repo, User } from '@/types'
+import type { Repo, User } from '@//types/github'
 import { fetchRepos, fetchUser } from '@/api/github'
 import PageHeader from '@/components/PageHeader'
 import { FaGithub } from 'react-icons/fa'
@@ -71,6 +71,12 @@ function renderError() {
 }
 
 function ProjectCard({ repo }: { repo: Repo }) {
+    const updatedDate = new Date(repo.updated_at).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      })
+    
     return (
         <li className="bg-gray-900 border border-gray-700 rounded-lg p-4 shadow">
             <h2 className="text-xl font-semibold text-blue-300 mb-1">
@@ -86,10 +92,13 @@ function ProjectCard({ repo }: { repo: Repo }) {
             {repo.description && (
                 <p className="text-gray-400 text-sm mb-2">{repo.description}</p>
             )}
-            <footer className="flex justify-between text-sm text-gray-500">
-                <span>🧠 {repo.language || 'N/A'}</span>
-                <span>⭐ {repo.stargazers_count}</span>
-            </footer>
+      <footer className="flex flex-col md:flex-row justify-between text-sm text-gray-500">
+        <div className="flex space-x-4 mb-2 md:mb-0">
+          <span>🧠 {repo.language || 'N/A'}</span>
+          <span>⭐ {repo.stargazers_count}</span>
+        </div>
+        <span>Last updated: {updatedDate}</span>
+      </footer>
         </li>
     )
 }
