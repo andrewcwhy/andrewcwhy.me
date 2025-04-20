@@ -7,23 +7,23 @@ import react from "@vitejs/plugin-react-swc";
 
 // https://vite.dev/config/
 export default defineConfig({
-	build: {
-		cssMinify: "lightningcss",
-	},
-	css: {
-		transformer: "lightningcss",
-	},
-	plugins: [
-		TanStackRouterVite({ target: "react", autoCodeSplitting: true }),
-		react(),
-		tailwindCSS(),
-	],
-	resolve: {
-		alias: {
-			"@": resolve(__dirname, "./src"),
-		},
-	},
-	server: {
-		port: 9705,
-	},
+  build: {
+    cssMinify: "lightningcss",
+  },
+  css: {
+    transformer: "lightningcss",
+  },
+  plugins: [
+    TanStackRouterVite({ target: "react", autoCodeSplitting: true }),
+    react(),
+    tailwindCSS(),
+  ],
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "./src"),
+    },
+  },
+  server: {
+    port: 9705,
+  },
 });
