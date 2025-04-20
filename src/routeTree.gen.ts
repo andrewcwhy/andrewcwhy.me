@@ -19,114 +19,114 @@ import { Route as IndexImport } from "./routes/index";
 // Create/Update Routes
 
 const ProjectsRoute = ProjectsImport.update({
-	id: "/projects",
-	path: "/projects",
-	getParentRoute: () => rootRoute,
+  id: "/projects",
+  path: "/projects",
+  getParentRoute: () => rootRoute,
 } as any);
 
 const ContactRoute = ContactImport.update({
-	id: "/contact",
-	path: "/contact",
-	getParentRoute: () => rootRoute,
+  id: "/contact",
+  path: "/contact",
+  getParentRoute: () => rootRoute,
 } as any);
 
 const AboutRoute = AboutImport.update({
-	id: "/about",
-	path: "/about",
-	getParentRoute: () => rootRoute,
+  id: "/about",
+  path: "/about",
+  getParentRoute: () => rootRoute,
 } as any);
 
 const IndexRoute = IndexImport.update({
-	id: "/",
-	path: "/",
-	getParentRoute: () => rootRoute,
+  id: "/",
+  path: "/",
+  getParentRoute: () => rootRoute,
 } as any);
 
 // Populate the FileRoutesByPath interface
 
 declare module "@tanstack/react-router" {
-	interface FileRoutesByPath {
-		"/": {
-			id: "/";
-			path: "/";
-			fullPath: "/";
-			preLoaderRoute: typeof IndexImport;
-			parentRoute: typeof rootRoute;
-		};
-		"/about": {
-			id: "/about";
-			path: "/about";
-			fullPath: "/about";
-			preLoaderRoute: typeof AboutImport;
-			parentRoute: typeof rootRoute;
-		};
-		"/contact": {
-			id: "/contact";
-			path: "/contact";
-			fullPath: "/contact";
-			preLoaderRoute: typeof ContactImport;
-			parentRoute: typeof rootRoute;
-		};
-		"/projects": {
-			id: "/projects";
-			path: "/projects";
-			fullPath: "/projects";
-			preLoaderRoute: typeof ProjectsImport;
-			parentRoute: typeof rootRoute;
-		};
-	}
+  interface FileRoutesByPath {
+    "/": {
+      id: "/";
+      path: "/";
+      fullPath: "/";
+      preLoaderRoute: typeof IndexImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/about": {
+      id: "/about";
+      path: "/about";
+      fullPath: "/about";
+      preLoaderRoute: typeof AboutImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/contact": {
+      id: "/contact";
+      path: "/contact";
+      fullPath: "/contact";
+      preLoaderRoute: typeof ContactImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/projects": {
+      id: "/projects";
+      path: "/projects";
+      fullPath: "/projects";
+      preLoaderRoute: typeof ProjectsImport;
+      parentRoute: typeof rootRoute;
+    };
+  }
 }
 
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-	"/": typeof IndexRoute;
-	"/about": typeof AboutRoute;
-	"/contact": typeof ContactRoute;
-	"/projects": typeof ProjectsRoute;
+  "/": typeof IndexRoute;
+  "/about": typeof AboutRoute;
+  "/contact": typeof ContactRoute;
+  "/projects": typeof ProjectsRoute;
 }
 
 export interface FileRoutesByTo {
-	"/": typeof IndexRoute;
-	"/about": typeof AboutRoute;
-	"/contact": typeof ContactRoute;
-	"/projects": typeof ProjectsRoute;
+  "/": typeof IndexRoute;
+  "/about": typeof AboutRoute;
+  "/contact": typeof ContactRoute;
+  "/projects": typeof ProjectsRoute;
 }
 
 export interface FileRoutesById {
-	__root__: typeof rootRoute;
-	"/": typeof IndexRoute;
-	"/about": typeof AboutRoute;
-	"/contact": typeof ContactRoute;
-	"/projects": typeof ProjectsRoute;
+  __root__: typeof rootRoute;
+  "/": typeof IndexRoute;
+  "/about": typeof AboutRoute;
+  "/contact": typeof ContactRoute;
+  "/projects": typeof ProjectsRoute;
 }
 
 export interface FileRouteTypes {
-	fileRoutesByFullPath: FileRoutesByFullPath;
-	fullPaths: "/" | "/about" | "/contact" | "/projects";
-	fileRoutesByTo: FileRoutesByTo;
-	to: "/" | "/about" | "/contact" | "/projects";
-	id: "__root__" | "/" | "/about" | "/contact" | "/projects";
-	fileRoutesById: FileRoutesById;
+  fileRoutesByFullPath: FileRoutesByFullPath;
+  fullPaths: "/" | "/about" | "/contact" | "/projects";
+  fileRoutesByTo: FileRoutesByTo;
+  to: "/" | "/about" | "/contact" | "/projects";
+  id: "__root__" | "/" | "/about" | "/contact" | "/projects";
+  fileRoutesById: FileRoutesById;
 }
 
 export interface RootRouteChildren {
-	IndexRoute: typeof IndexRoute;
-	AboutRoute: typeof AboutRoute;
-	ContactRoute: typeof ContactRoute;
-	ProjectsRoute: typeof ProjectsRoute;
+  IndexRoute: typeof IndexRoute;
+  AboutRoute: typeof AboutRoute;
+  ContactRoute: typeof ContactRoute;
+  ProjectsRoute: typeof ProjectsRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
-	IndexRoute: IndexRoute,
-	AboutRoute: AboutRoute,
-	ContactRoute: ContactRoute,
-	ProjectsRoute: ProjectsRoute,
+  IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  ProjectsRoute: ProjectsRoute,
 };
 
 export const routeTree = rootRoute
-	._addFileChildren(rootRouteChildren)
-	._addFileTypes<FileRouteTypes>();
+  ._addFileChildren(rootRouteChildren)
+  ._addFileTypes<FileRouteTypes>();
 
 /* ROUTE_MANIFEST_START
 {
