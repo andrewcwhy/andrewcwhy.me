@@ -1,21 +1,15 @@
 import { resolve } from "node:path";
 
-import { defineConfig } from "vite";
-import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import tailwindCSS from "@tailwindcss/vite";
-import react from "@vitejs/plugin-react-swc";
+import { defineConfig } from "vite";
+import solid from "vite-plugin-solid";
 
 // https://vite.dev/config/
 export default defineConfig({
-	build: {
-		cssMinify: "lightningcss",
-	},
-	css: {
-		transformer: "lightningcss",
-	},
 	plugins: [
-		TanStackRouterVite({ target: "react", autoCodeSplitting: true }),
-		react(),
+		solid(),
+		tanstackRouter({ target: "solid", autoCodeSplitting: true }),
 		tailwindCSS(),
 	],
 	resolve: {

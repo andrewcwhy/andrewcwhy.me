@@ -3,7 +3,7 @@ import {
 	Outlet,
 	createRootRoute,
 	HeadContent,
-} from "@tanstack/react-router";
+} from "@tanstack/solid-router";
 
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";

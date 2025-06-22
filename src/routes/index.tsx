@@ -1,9 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/solid-router";
 import Hero from "@/components/Hero";
 
 export const Route = createFileRoute("/")({
 	// This is the route's meta data. It will be used to set the page title and description.
-	component: Home,
+	component: App,
 	// This is the route's meta data. It will be used to set the page title and description.
 	head: () => ({
 		meta: [
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
 	}),
 });
 
-function Home() {
+function App() {
 	return (
 		<>
 			<Hero

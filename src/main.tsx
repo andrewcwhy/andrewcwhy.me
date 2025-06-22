@@ -1,33 +1,33 @@
-import { StrictMode } from "react";
-import ReactDOM from "react-dom/client";
-import { RouterProvider, createRouter } from "@tanstack/react-router";
+import { RouterProvider, createRouter } from "@tanstack/solid-router";
 
-// Import the generated route tree
-import { routeTree } from "./routeTree.gen";
+import { render } from "solid-js/web";
 
-import "@/styles/index.css";
+import "./index.css";
+import { routeTree } from "./routeTree.gen.ts";
 
-// Set up a Router instance
 const router = createRouter({
 	routeTree,
 	defaultPreload: "intent",
 	scrollRestoration: true,
+	defaultPreloadStaleTime: 0,
 });
 
-// Register the router instance for type safety
-declare module "@tanstack/react-router" {
+declare module "@tanstack/solid-router" {
 	interface Register {
 		router: typeof router;
 	}
 }
 
-const rootElement = document.getElementById("app")!;
-
-if (rootElement && !rootElement.innerHTML) {
-	const root = ReactDOM.createRoot(rootElement);
-	root.render(
-		<StrictMode>
+function App() {
+	return (
+		<>
 			<RouterProvider router={router} />
-		</StrictMode>,
+		</>
 	);
+}
+
+const rootElement = document.getElementById("app");
+
+if (rootElement) {
+	render(() => <App />, rootElement);
 }

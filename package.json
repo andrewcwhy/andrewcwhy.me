@@ -1,40 +1,39 @@
 {
 	"name": "andrewcwhy.me",
-	"author": "Andrew Christian Young",
-	"private": false,
+	"description": "My personal website.",
+	"author": "Andrew Christian Young (https://andrewcwhy.me/)",
+	"license": "MIT",
+	"private": true,
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/andrewcwhy/andrewcwhy.me"
 	},
-	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"build": "bunx --bun vite build",
-		"dev": "bunx --bun vite",
-		"check": "bunx biome check --write .",
-		"format": "bunx biome format --write .",
-		"lint": "bunx biome lint --write .",
-		"preview": "vite preview"
+		"build": "tsc && vite build",
+		"dev": "vite",
+		"preview": "vite preview",
+		"check": "biome check --write .",
+		"format": "biome format --write .",
+		"lint": "biome lint --write ."
 	},
 	"dependencies": {
-		"@biomejs/biome": "1.9.4",
-		"@tanstack/react-router": "^1.120.5",
-		"react": "^19.1.0",
-		"react-dom": "^19.1.0",
-		"react-icons": "^5.5.0",
-		"tailwindcss": "^4.1.7",
-		"zod": "^3.25.3"
+		"@tailwindcss/vite": "^4.1.10",
+		"@tanstack/solid-form": "^1.12.3",
+		"@tanstack/solid-router": "^1.121.27",
+		"clsx": "^2.1.1",
+		"solid-icons": "^1.1.0",
+		"solid-js": "^1.9.7",
+		"tailwindcss": "^4.1.10",
+		"zod": "^3.25.67"
 	},
 	"devDependencies": {
-		"@janfig/biome": "^0.1.0",
-		"@tailwindcss/vite": "^4.1.7",
-		"@tanstack/router-plugin": "^1.120.5",
-		"@types/bun": "^1.2.13",
-		"@types/react": "^19.1.4",
-		"@types/react-dom": "^19.1.5",
-		"@vitejs/plugin-react-swc": "^3.9.0",
-		"lightningcss": "^1.30.1",
+		"@biomejs/biome": "2.0.4",
+		"@janfig/tsconfig": "^0.1.1",
+		"@tanstack/router-plugin": "^1.121.29",
+		"@types/bun": "^1.2.17",
 		"typescript": "~5.8.3",
-		"vite": "^6.3.5"
+		"vite": "^6.3.5",
+		"vite-plugin-solid": "^2.11.6"
 	}
 }

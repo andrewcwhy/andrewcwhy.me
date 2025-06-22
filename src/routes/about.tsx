@@ -1,3 +1,4 @@
+import { createFileRoute } from "@tanstack/solid-router"
 import { useState } from "react";
 import { FaBook, FaTerminal, FaCode, FaEye } from "react-icons/fa";
 import { socialLinks } from "@/config/social";
@@ -66,7 +67,7 @@ function TabSwitcher({ activeTab, setActiveTab }: TabSwitcherProps) {
 				<FaCode className="inline-block mr-1" /> Code
 			</button>
 		</div>
-	);
+	)
 }
 
 function Section({ section }: SectionProps) {
@@ -101,7 +102,7 @@ function Section({ section }: SectionProps) {
 				)}
 			</div>
 		</section>
-	);
+	)
 }
 
 // This is the main component for the About page
@@ -120,7 +121,7 @@ function About() {
 				))}
 			</div>
 		</>
-	);
+	)
 }
 
 const sections: SectionData[] = [
@@ -129,7 +130,7 @@ const sections: SectionData[] = [
 		code: `
     <div class="about-me">
       <h2 class="mb-4">About Me</h2>
-      <p class="mb-4">I'm Andrew, and I'm learning web development and other programming languages like Python, Java, and C.</p>
+      <p class="mb-4">I"m Andrew, and I"m learning web development and other programming languages like Python, Java, and C.</p>
       <p>I'm pursuing a degree in Computer Science at UCF.</p>
     </div>`,
 	},

@@ -1,5 +1,5 @@
-import { FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/fa";
-import { SiRoblox } from "react-icons/si";
+import { FaGithub, FaLinkedin, FaStackOverflow } from "solid-icons/fa";
+import { SiRoblox } from "solid-icons/si";
 
 export const socialLinks = {
 	github: {

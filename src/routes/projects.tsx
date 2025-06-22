@@ -1,6 +1,7 @@
+import { createFileRoute } from "@tanstack/solid-router"
 import { useEffect, useState } from "react";
-import type { Repo, User } from "@//types/github";
-import { fetchRepos, fetchUser } from "@/api/github";
+import type { Repo, User } from "@/github";
+import { fetchRepos, fetchUser } from "@/github-api";
 import PageHeader from "@/components/PageHeader";
 import { FaGithub } from "react-icons/fa";
 import { createFileRoute } from "@tanstack/react-router";
@@ -51,7 +52,7 @@ function Projects() {
 				))}
 			</ul>
 		</>
-	);
+	)
 }
 
 function renderLoading() {
@@ -59,7 +60,7 @@ function renderLoading() {
 		<main className="min-h-screen flex justify-center items-center text-white">
 			<p>Loading projects...</p>
 		</main>
-	);
+	)
 }
 
 function renderError() {
@@ -67,7 +68,7 @@ function renderError() {
 		<main className="min-h-screen flex justify-center items-center text-red-500">
 			<p>Failed to load GitHub user data.</p>
 		</main>
-	);
+	)
 }
 
 function ProjectCard({ repo }: { repo: Repo }) {
@@ -100,5 +101,5 @@ function ProjectCard({ repo }: { repo: Repo }) {
 				<span>Last updated: {updatedDate}</span>
 			</footer>
 		</li>
-	);
+	)
 }

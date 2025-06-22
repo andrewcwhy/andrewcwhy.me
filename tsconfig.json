@@ -1,11 +1,12 @@
 {
-	"extends": "@janfig/tsconfig/react",
+	"extends": "@janfig/tsconfig/solid",
 	"compilerOptions": {
 		"types": ["vite/client"],
+
+		// Path aliases
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"]
 		}
-	},
-	"include": ["**/*.ts", "**/*.tsx"],
+	}
 }

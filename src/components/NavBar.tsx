@@ -1,21 +1,22 @@
-import { useRef } from "react";
-import { Link } from "@tanstack/react-router";
-import { HiMenu, HiX } from "react-icons/hi";
+import { createSignal, onCleanup, onMount } from "solid-js";
+import { Link } from "@tanstack/solid-router";
+import { HiMenu, HiX } from "solid-icons/hi";
 import { useClickAway, useHideOnScroll, useToggle } from "@/hooks";
 
 interface LinkProps {
-	label: string;
-	path: string;
+  label: string;
+  path: string;
 }
 
 const links: LinkProps[] = [
-	{ label: "Home", path: "/" },
-	{ label: "About", path: "/about" },
-	{ label: "Contact", path: "/contact" },
-	{ label: "Projects", path: "/projects" },
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Contact", path: "/contact" },
+  { label: "Projects", path: "/projects" },
 ];
 
-export default function Nav() {
+
+export default function NavBar() {
 	const [isMenuOpen, toggleMenu] = useToggle();
 	const showNav = useHideOnScroll();
 	const menuRef = useRef<HTMLDivElement>(null);
