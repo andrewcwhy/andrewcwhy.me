@@ -1,4 +1,5 @@
-import { socialLinks } from "@/config/social";
+import { type Component, mergeProps } from "solid-js";
+import { socialLinks } from ":config/social";
 
 interface SocialLinksProps {
 	showPlatform?: boolean;
@@ -7,29 +8,29 @@ interface SocialLinksProps {
 	hideHttps?: boolean;
 }
 
-export default function ({
-	showPlatform = true,
-	showUrl = false,
-	showIcon = false,
-	hideHttps = false,
-}: SocialLinksProps) {
+export const SocialLinks: Component<SocialLinksProps> = (props) => {
+	const props = mergeProps(
+		{ hideHttps: false, showIcon: false, showPlatform: true, showUrl: false },
+		props,
+	);
+
 	return (
-		<ul className="space-y-2">
+		<ul class="space-y-2">
 			{Object.values(socialLinks).map(
 				({ platform, username, url, icon: Icon }) => {
 					// Remove the protocol (http/https) if hideHttps is true
 					const displayUrl = hideHttps ? url.replace(/^https?:\/\//, "") : url;
 					return (
-						<li key={platform} className="flex items-center space-x-2">
-							{showIcon && <Icon size={20} />}
-							{showPlatform && (
-								<span className="text-gray-700">
+						<li key={platform} class="flex items-center space-x-2">
+							{props.showIcon && <Icon size={20} />}
+							{props.showPlatform && (
+								<span class="text-gray-700">
 									{showUrl ? (
 										<a
 											href={url}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="text-blue-400 hover:underline"
+											class="text-blue-400 hover:underline"
 											title={`Follow me on ${platform} (${username})`}
 										>
 											{platform}
@@ -39,12 +40,12 @@ export default function ({
 									)}
 								</span>
 							)}
-							{showUrl && !showPlatform && (
+							{props.showUrl && !showPlatform && (
 								<a
 									href={url}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="text-blue-500 hover:underline"
+									class="text-blue-500 hover:underline"
 								>
 									{displayUrl}
 								</a>
@@ -55,4 +56,4 @@ export default function ({
 			)}
 		</ul>
 	);
-}
+};

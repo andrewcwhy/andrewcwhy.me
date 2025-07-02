@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { createSignal, onCleanup, onMount } from "solid-js";
 
 export function useHideOnScroll(
-	initialState: boolean = true,
+	initialValue: boolean = true,
 	threshold: number = 10,
 ) {
-	const [isVisible, setIsVisible] = useState(initialState);
-	const [lastScrollY, setLastScrollY] = useState(0);
+	const [visible, setVisible] = createSignal(initialValue);
+	let lastScrollY = 0;
 
 	useEffect(() => {
 		function handleScroll() {
@@ -18,5 +18,5 @@ export function useHideOnScroll(
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, [lastScrollY, threshold]);
 
-	return isVisible;
+	return visible;
 }

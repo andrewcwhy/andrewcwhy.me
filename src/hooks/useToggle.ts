@@ -1,14 +1,14 @@
-import { useCallback, useState } from "react";
+import { createSignal } from "solid-js";
 
 export function useToggle(
-	initialState: boolean = false,
-): [isToggled: boolean, handleToggle: () => void] {
-	const [isToggled, setIsToggled] = useState(initialState);
+	initialValue: boolean = false,
+): [toggled: boolean, handleToggle: () => void] {
+	const [toggled, setToggled] = createSignal(initialValue);
 
 	// This function will toggle the value between true and false
-	const handleToggle = useCallback(() => {
-		setIsToggled((prev) => !prev);
-	}, []);
+	const handleToggle = () => {
+		setToggled((prev) => !prev);
+	};
 
-	return [isToggled, handleToggle];
+	return [toggled, handleToggle];
 }

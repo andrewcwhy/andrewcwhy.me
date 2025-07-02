@@ -1,11 +1,11 @@
-import type { IconType } from "react-icons";
+import type { Component } from "solid-js";
 
-interface HeaderProps {
+export interface HeaderProps {
 	icon?: IconType;
 	title: string;
 }
 
-export default function PageHeader({ icon: Icon, title }: HeaderProps) {
+export const Header: Component<HeaderProps> = (props) => {
 	const user = "andrewcwhy";
 	const repoName = `${user}.me`;
 	const profileUrl = `https://github.com/${user}`;
@@ -13,31 +13,31 @@ export default function PageHeader({ icon: Icon, title }: HeaderProps) {
 	const repoUrl = `https://github.com/${user}/${repoName}`;
 
 	return (
-		<header className="flex items-center gap-4 border-b-2 border-gray-700 pb-4 mb-8">
-			{Icon && <Icon className="text-white w-16 h-16" />}
-			<div className="flex items-baseline gap-4 text-2xl md:text-3xl font-mono font-semibold">
+		<header class="flex items-center gap-4 border-b-2 border-gray-700 pb-4 mb-8">
+			{Icon && <Icon class="text-white w-16 h-16" />}
+			<div class="flex items-baseline gap-4 text-2xl md:text-3xl font-mono font-semibold">
 				<a
 					href={repoUrl}
 					target="_blank"
-					className="text-blue-400 hover:underline"
+					class="text-blue-400 hover:underline"
 					rel="noopener noreferrer"
 					title="GitHub Profile"
 				>
 					{user}
 				</a>
-				<span className="text-gray-400">/</span>
+				<span class="text-gray-400">/</span>
 				<h1>
 					<a
 						href={fileUrl}
 						title="Visit the source code of this page"
-						className="text-white hover:underline"
+						class="text-white hover:underline"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						{title}
+						{props.title}
 					</a>
 				</h1>
 			</div>
 		</header>
 	);
-}
+};

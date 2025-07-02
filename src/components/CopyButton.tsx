@@ -1,30 +1,28 @@
-import { useCopyToClipboard } from "@/hooks";
-import type { ReactNode } from "react";
-import { FaClipboard, FaClipboardCheck } from "react-icons/fa";
+import { useCopyToClipboard } from ":hooks";
+
+
+import type { Component } from "solid-js";
+import { FaClipboard, FaClipboardCheck } from "solid-icons/fa";
 
 interface CopyButtonProps {
 	textToCopy: string;
-	children?: ReactNode;
+	children?: solidNode;
 	showIcon?: boolean;
-	className?: string;
+	class?: string;
 }
 
-export default function CopyButton({
-	textToCopy,
-	children,
-	showIcon = true,
-	className = "",
-}: CopyButtonProps) {
+export const CopyButton: Component<CopyButtonProps> = (props) => {
 	const [isCopied, handleCopy] = useCopyToClipboard();
 
 	return (
 		<button
+			class={`flex items-center gap-2 px-3 py-1.5 rounded-md border bg-gray-800 text-white hover:bg-gray-700 transition ${class}`}
 			onClick={() => handleCopy(textToCopy)}
-			className={`flex items-center gap-2 px-3 py-1.5 rounded-md border bg-gray-800 text-white hover:bg-gray-700 transition ${className}`}
+			type="button"
 		>
 			{showIcon &&
 				(isCopied ? (
-					<FaClipboardCheck className="text-green-400" />
+					<FaClipboardCheck class="text-green-400" />
 				) : (
 					<FaClipboard />
 				))}
@@ -32,4 +30,4 @@ export default function CopyButton({
 			{!children && !showIcon && (isCopied ? "Copied!" : "Copy")}
 		</button>
 	);
-}
+};

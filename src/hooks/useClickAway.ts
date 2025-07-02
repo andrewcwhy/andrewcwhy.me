@@ -1,4 +1,4 @@
-import { useEffect, RefObject } from "react";
+import { onMount } from "solid-js";
 
 type EventType = MouseEvent | TouchEvent;
 
@@ -6,7 +6,7 @@ export function useClickAway<T extends HTMLElement>(
 	ref: RefObject<T | null>,
 	onClickAway: (event: EventType) => void,
 ) {
-	useEffect(() => {
+	onMount(() => {
 		function handleClickAway(event: EventType) {
 			if (ref.current && !ref.current.contains(event.target as Node)) {
 				onClickAway(event);

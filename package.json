@@ -10,7 +10,7 @@
 	},
 	"type": "module",
 	"scripts": {
-		"build": "tsc && vite build",
+		"build": "vite build",
 		"dev": "vite",
 		"preview": "vite preview",
 		"check": "biome check --write .",
@@ -18,20 +18,22 @@
 		"lint": "biome lint --write ."
 	},
 	"dependencies": {
-		"@tailwindcss/vite": "^4.1.10",
+		"@solidjs/meta": "^0.29.4",
 		"@tanstack/solid-form": "^1.12.3",
 		"@tanstack/solid-router": "^1.121.27",
 		"clsx": "^2.1.1",
 		"solid-icons": "^1.1.0",
 		"solid-js": "^1.9.7",
-		"tailwindcss": "^4.1.10",
 		"zod": "^3.25.67"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.0.4",
 		"@janfig/tsconfig": "^0.1.1",
+		"@janustack/vite-config-paths": "^1.0.0",
+		"@tailwindcss/vite": "^4.1.11",
 		"@tanstack/router-plugin": "^1.121.29",
 		"@types/bun": "^1.2.17",
+		"tailwindcss": "^4.1.11",
 		"typescript": "~5.8.3",
 		"vite": "^6.3.5",
 		"vite-plugin-solid": "^2.11.6"

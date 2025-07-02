@@ -2,7 +2,7 @@
 
 **Personal portfolio website of me**
 
-Welcome to the source code for [andrewcwhy.me](https://andrewcwhy.me), my personal portfolio. Built with **Vite, React, TypeScript, and Tailwind CSS**, this website showcases my projects, experience, and technical insights.
+Welcome to the source code for [andrewcwhy.me](https://andrewcwhy.me), my personal portfolio. Built with **Vite, solid, TypeScript, and Tailwind CSS**, this website showcases my projects, experience, and technical insights.
 
 ## ❓About the Domain Name
 
@@ -19,7 +19,7 @@ When pronounced together, it sounds like **"Andrew see why"**. Now you see why?
 
 This website is built using:
 
-- **Frontend:** React + TypeScript
+- **Frontend:** solid + TypeScript
 - **Styling:** Tailwind CSS
 - **Build Tools:** Vite + Bun
 - **Code Quality:** ESLint + Prettier

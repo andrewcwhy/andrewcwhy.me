@@ -1,7 +1,7 @@
 import { useForm, type AnyFieldApi } from "@tanstack/solid-form";
 import { createFileRoute } from "@tanstack/solid-router";
 
-import * as z from "zod";
+import { Button, Input, Label } from ":components/atoms";
 
 export const Route = createFileRoute("/contact")({
 	component: Contact,
@@ -24,7 +24,7 @@ function FieldInfo({ field }: { field: AnyFieldApi }) {
 	return (
 		<>
 			{field.state.meta.isTouched && !field.state.meta.isValid ? (
-				<p className="mt-1 text-red-600 text-sm">
+				<p class="mt-1 text-red-600 text-sm">
 					{field.state.meta.errors.map((err) => err.message).join(",")}
 				</p>
 			) : null}
@@ -88,27 +88,23 @@ function Contact() {
 
 	return (
 		<form
-			className="bg-gray-300 grid grid-cols-1 gap-4 max-w-xl mx-auto p-6"
+			class="bg-gray-300 grid grid-cols-1 gap-4 max-w-xl mx-auto p-6"
 			onSubmit={(e) => {
 				e.preventDefault();
 				e.stopPropagation();
 				form.handleSubmit();
 			}}
 		>
-			<h1 className="text-center">Contact</h1>
+			<h1 class="text-center">Contact</h1>
 
 			<form.Field name="name">
 				{(field) => (
 					<div>
-						<label className="block mb-1" htmlFor={field.name}>
-							Name
-						</label>
-						<input
-							className="p-2 w-full"
+						<Label htmlFor={field.name}>Name</Label>
+						<Input
 							id={field.name}
 							name={field.name}
 							onChange={(e) => field.handleChange(e.target.value)}
-							type="text"
 							value={field.state.value}
 						/>
 						<FieldInfo field={field} />
@@ -119,11 +115,9 @@ function Contact() {
 			<form.Field name="email">
 				{(field) => (
 					<div>
-						<label className="block mb-1" htmlFor={field.name}>
-							Email
-						</label>
+						<Label htmlFor={field.name}>Email</Label>
 						<input
-							className="p-2 w-full"
+							class="p-2 w-full"
 							id={field.name}
 							name={field.name}
 							onChange={(e) => field.handleChange(e.target.value)}
@@ -138,11 +132,9 @@ function Contact() {
 			<form.Field name="subject">
 				{(field) => (
 					<div>
-						<label className="block mb-1" htmlFor={field.name}>
-							Subject
-						</label>
+						<Label htmlFor={field.name}>Subject</Label>
 						<input
-							className="p-2 w-full"
+							class="p-2 w-full"
 							id={field.name}
 							name={field.name}
 							onChange={(e) => field.handleChange(e.target.value)}
@@ -157,11 +149,9 @@ function Contact() {
 			<form.Field name="message">
 				{(field) => (
 					<div>
-						<label className="block mb-1" htmlFor={field.name}>
-							Message
-						</label>
+						<Label htmlFor={field.name}>Message</Label>
 						<textarea
-							className="p-2 w-full"
+							class="p-2 w-full"
 							id={field.name}
 							name={field.name}
 							onChange={(e) => field.handleChange(e.target.value)}
@@ -173,13 +163,12 @@ function Contact() {
 				)}
 			</form.Field>
 
-			<button
-				className="cursor-pointer p-4 w-full"
+			<Button
+				class="cursor-pointer p-4 w-full"
 				onClick={form.handleSubmit}
-				type="submit"
 			>
 				Send
-			</button>
+			</Button>
 		</form>
 	);
 }

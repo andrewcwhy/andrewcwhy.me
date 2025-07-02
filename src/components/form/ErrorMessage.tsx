@@ -1,8 +1,11 @@
-type ErrorMessageProps = {
+import { type Component, Show } from "solid-js";
+
+export interface ErrorMessageProps {
 	message?: string;
 };
 
-export default function ErrorMessage({ message }: ErrorMessageProps) {
-	if (!message) return null;
-	return <p className="mt-1 text-sm text-red-500">{message}</p>;
-}
+export const ErrorMessage: Component<ErrorMessageProps> = (props) => (
+	<Show when={props.message}>
+		<p class="mt-1 text-sm text-red-500">{props.message}</p>;
+	</Show>
+)
