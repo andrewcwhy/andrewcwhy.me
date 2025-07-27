@@ -2,9 +2,9 @@
 
 **Personal portfolio website of me**
 
-Welcome to the source code for [andrewcwhy.me](https://andrewcwhy.me), my personal portfolio. Built with **Vite, solid, TypeScript, and Tailwind CSS**, this website showcases my projects, experience, and technical insights.
+Welcome to the source code for [andrewcwhy.me](https://andrewcwhy.me), my personal portfolio.
 
-## ❓About the Domain Name
+##  ❓About the Domain Name
 
 The domain name **andrewcwhy.me** is a play on my full name. Here's the breakdown:
 
@@ -19,10 +19,10 @@ When pronounced together, it sounds like **"Andrew see why"**. Now you see why?
 
 This website is built using:
 
-- **Frontend:** solid + TypeScript
+- **Frontend:** Solid + TypeScript
 - **Styling:** Tailwind CSS
 - **Build Tools:** Vite + Bun
-- **Code Quality:** ESLint + Prettier
+- **Code Quality:** Biome
 - **Hosting:** Netlify
 
 ## 📬 Connect with Me
@@ -31,7 +31,6 @@ You can find me at:
 
 - **GitHub:** [github.com/andrewcwhy](https://github.com/andrewcwhy)
 - **LinkedIn:** [linkedin.com/in/youngandrewchristian](https://www.linkedin.com/in/youngandrewchristian)
-- **Stack Overflow:** [stackoverflow.com/users/13189567/acy2k5](https://stackoverflow.com/users/13189567/acy2k5)
 
 ---
 

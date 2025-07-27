@@ -1,14 +1,11 @@
-import { type Component, mergeProps } from "solid-js";
+import { type Component, type JSX, mergeProps } from "solid-js";
 
-export interface ButtonProps {
-	onClick?: () => void;
-	class?: string;
-	type?: "button" | "reset" | "submit";
+export interface ButtonProps extends JSX.HTMLAttributes<HTMLButtonElement> {
 	variant?: "primary" | "secondary";
 }
 
 export const Button: Component<ButtonProps> = (props) => {
-	props = mergeProps({ type: "button", variant: "primary" }, props)
+	props = mergeProps({ type: "button", variant: "primary" }, props);
 
 	const baseStyles = "px-6 py-3 font-semibold rounded-lg transition border";
 
@@ -19,9 +16,8 @@ export const Button: Component<ButtonProps> = (props) => {
 
 	return (
 		<button
-			class={`${baseStyles} ${variantStyles} ${class}`}
-			onClick={props.onClick}
-			type={props.type}
+			class={`${baseStyles} ${variantStyles} ${props.class ?? ""}`}
+			{...props}
 		>
 			{props.children}
 		</button>

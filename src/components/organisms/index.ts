@@ -1,2 +1,3 @@
 export { Footer } from "./Footer";
-export { NavBar } from "./NavBar";
+export { Nav } from "./Nav";
+export { NotFound } from "./NotFound";

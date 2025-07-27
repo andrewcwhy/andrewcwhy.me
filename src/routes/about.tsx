@@ -11,9 +11,6 @@ export const Route = createFileRoute("/about")({
 				name: "description",
 				content: "About me.",
 			},
-			{
-				style: "body { background-color: #1a202c; color: #cbd5e1; }",
-			}
 		],
 	}),
 });
@@ -21,17 +18,7 @@ export const Route = createFileRoute("/about")({
 function About() {
 	return (
 		<>
-			<PageHeader title="About" icon={FaBook} />
-
-			<div class="flex flex-col gap-8">
-				{sections.map((section, index) => (
-					<Section
-						key={index}
-						section={section}
-						isLast={index === sections.length - 1}
-					/>
-				))}
-			</div>
+		
 		</>
 	);
 }

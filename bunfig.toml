@@ -1,5 +1,0 @@
-[run]
-# equivalent to `bun --bun` for all `bun run` commands
-bun = true
-# default on Windows
-shell = "bun"

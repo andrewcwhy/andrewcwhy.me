@@ -1,11 +1,7 @@
-import { type Component, children } from "solid-js";
+import type { Component, JSX } from "solid-js";
 
-import { JSX } from "solid-js";
-
-export interface LabelProps {
-	class?: string;
+export interface LabelProps extends JSX.HTMLAttributes<HTMLLabelElement> {
 	for: string;
-	children?: JSX.Element;
 }
 
 export const Label: Component<LabelProps> = (props) => (

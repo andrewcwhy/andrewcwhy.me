@@ -19,23 +19,23 @@
 	},
 	"dependencies": {
 		"@solidjs/meta": "^0.29.4",
-		"@tanstack/solid-form": "^1.12.3",
-		"@tanstack/solid-router": "^1.121.27",
+		"@tanstack/solid-form": "^1.15.0",
+		"@tanstack/solid-router": "^1.130.1",
 		"clsx": "^2.1.1",
 		"solid-icons": "^1.1.0",
 		"solid-js": "^1.9.7",
-		"zod": "^3.25.67"
+		"zod": "^4.0.10"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.0.4",
+		"@biomejs/biome": "2.1.2",
 		"@janfig/tsconfig": "^0.1.1",
 		"@janustack/vite-config-paths": "^1.0.0",
 		"@tailwindcss/vite": "^4.1.11",
-		"@tanstack/router-plugin": "^1.121.29",
-		"@types/bun": "^1.2.17",
+		"@tanstack/router-plugin": "^1.130.1",
+		"@types/bun": "^1.2.19",
 		"tailwindcss": "^4.1.11",
 		"typescript": "~5.8.3",
-		"vite": "^6.3.5",
-		"vite-plugin-solid": "^2.11.6"
+		"vite": "^7.0.6",
+		"vite-plugin-solid": "^2.11.7"
 	}
 }
