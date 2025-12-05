@@ -1,27 +1,6 @@
-# Build output
-**/dist/
-target
-
-# Caches
-*.tsbuildinfo
-
-# Code coverage
-coverage
-*.lcov
-
-# Dependencies (bun install)
-node_modules
-
-# Finder (MacOS) folder config
-.DS_Store
-
-# IntelliJ based IDEs
-.idea
-
-# Logs
-logs
-*.log
-
-# moon
 .moon/cache
-.moon/docker
+
+# Dependencies
+node_modules/
+
+dist/

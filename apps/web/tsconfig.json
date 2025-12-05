@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"noEmit": true,
+		"paths": {
+			":*": ["./src/*"],
+			"content-collections": ["./.content-collections/generated"]
+		},
+		"types": ["vite/client"]
+	},
+	"extends": "@janfig/tsconfig/solid",
+	"includes": ["src/**/*"]
+}

@@ -1,0 +1,12 @@
+.content-collections/
+.tanstack/
+.zed/
+node_modules/
+.containerignore
+
+# Git
+.git
+.gitignore
+
+LICENSE
+README.md
