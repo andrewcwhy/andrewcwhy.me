@@ -8,124 +8,124 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as Test2RouteImport } from './routes/test2'
-import { Route as TestRouteImport } from './routes/test'
-import { Route as MdRouteImport } from './routes/md'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as rootRouteImport } from "./routes/__root";
+import { Route as Test2RouteImport } from "./routes/test2";
+import { Route as TestRouteImport } from "./routes/test";
+import { Route as MdRouteImport } from "./routes/md";
+import { Route as AboutRouteImport } from "./routes/about";
+import { Route as IndexRouteImport } from "./routes/index";
 
 const Test2Route = Test2RouteImport.update({
-  id: '/test2',
-  path: '/test2',
-  getParentRoute: () => rootRouteImport,
-} as any)
+	id: "/test2",
+	path: "/test2",
+	getParentRoute: () => rootRouteImport,
+} as any);
 const TestRoute = TestRouteImport.update({
-  id: '/test',
-  path: '/test',
-  getParentRoute: () => rootRouteImport,
-} as any)
+	id: "/test",
+	path: "/test",
+	getParentRoute: () => rootRouteImport,
+} as any);
 const MdRoute = MdRouteImport.update({
-  id: '/md',
-  path: '/md',
-  getParentRoute: () => rootRouteImport,
-} as any)
+	id: "/md",
+	path: "/md",
+	getParentRoute: () => rootRouteImport,
+} as any);
 const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
+	id: "/about",
+	path: "/about",
+	getParentRoute: () => rootRouteImport,
+} as any);
 const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
+	id: "/",
+	path: "/",
+	getParentRoute: () => rootRouteImport,
+} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/md': typeof MdRoute
-  '/test': typeof TestRoute
-  '/test2': typeof Test2Route
+	"/": typeof IndexRoute;
+	"/about": typeof AboutRoute;
+	"/md": typeof MdRoute;
+	"/test": typeof TestRoute;
+	"/test2": typeof Test2Route;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/md': typeof MdRoute
-  '/test': typeof TestRoute
-  '/test2': typeof Test2Route
+	"/": typeof IndexRoute;
+	"/about": typeof AboutRoute;
+	"/md": typeof MdRoute;
+	"/test": typeof TestRoute;
+	"/test2": typeof Test2Route;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/md': typeof MdRoute
-  '/test': typeof TestRoute
-  '/test2': typeof Test2Route
+	__root__: typeof rootRouteImport;
+	"/": typeof IndexRoute;
+	"/about": typeof AboutRoute;
+	"/md": typeof MdRoute;
+	"/test": typeof TestRoute;
+	"/test2": typeof Test2Route;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/md' | '/test' | '/test2'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/md' | '/test' | '/test2'
-  id: '__root__' | '/' | '/about' | '/md' | '/test' | '/test2'
-  fileRoutesById: FileRoutesById
+	fileRoutesByFullPath: FileRoutesByFullPath;
+	fullPaths: "/" | "/about" | "/md" | "/test" | "/test2";
+	fileRoutesByTo: FileRoutesByTo;
+	to: "/" | "/about" | "/md" | "/test" | "/test2";
+	id: "__root__" | "/" | "/about" | "/md" | "/test" | "/test2";
+	fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  MdRoute: typeof MdRoute
-  TestRoute: typeof TestRoute
-  Test2Route: typeof Test2Route
+	IndexRoute: typeof IndexRoute;
+	AboutRoute: typeof AboutRoute;
+	MdRoute: typeof MdRoute;
+	TestRoute: typeof TestRoute;
+	Test2Route: typeof Test2Route;
 }
 
-declare module '@tanstack/solid-router' {
-  interface FileRoutesByPath {
-    '/test2': {
-      id: '/test2'
-      path: '/test2'
-      fullPath: '/test2'
-      preLoaderRoute: typeof Test2RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/test': {
-      id: '/test'
-      path: '/test'
-      fullPath: '/test'
-      preLoaderRoute: typeof TestRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/md': {
-      id: '/md'
-      path: '/md'
-      fullPath: '/md'
-      preLoaderRoute: typeof MdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-  }
+declare module "@tanstack/solid-router" {
+	interface FileRoutesByPath {
+		"/test2": {
+			id: "/test2";
+			path: "/test2";
+			fullPath: "/test2";
+			preLoaderRoute: typeof Test2RouteImport;
+			parentRoute: typeof rootRouteImport;
+		};
+		"/test": {
+			id: "/test";
+			path: "/test";
+			fullPath: "/test";
+			preLoaderRoute: typeof TestRouteImport;
+			parentRoute: typeof rootRouteImport;
+		};
+		"/md": {
+			id: "/md";
+			path: "/md";
+			fullPath: "/md";
+			preLoaderRoute: typeof MdRouteImport;
+			parentRoute: typeof rootRouteImport;
+		};
+		"/about": {
+			id: "/about";
+			path: "/about";
+			fullPath: "/about";
+			preLoaderRoute: typeof AboutRouteImport;
+			parentRoute: typeof rootRouteImport;
+		};
+		"/": {
+			id: "/";
+			path: "/";
+			fullPath: "/";
+			preLoaderRoute: typeof IndexRouteImport;
+			parentRoute: typeof rootRouteImport;
+		};
+	}
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  MdRoute: MdRoute,
-  TestRoute: TestRoute,
-  Test2Route: Test2Route,
-}
+	IndexRoute: IndexRoute,
+	AboutRoute: AboutRoute,
+	MdRoute: MdRoute,
+	TestRoute: TestRoute,
+	Test2Route: Test2Route,
+};
 export const routeTree = rootRouteImport
-  ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+	._addFileChildren(rootRouteChildren)
+	._addFileTypes<FileRouteTypes>();

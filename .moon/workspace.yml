@@ -1,9 +1,8 @@
 # https://moonrepo.dev/docs/config/workspace
-$schema: https://moonrepo.dev/schemas/workspace.json
+$schema: ./cache/schemas/workspace.json
 
 projects:
     - apps/*
-    - packages/*
 
 vcs:
     defaultBranch: main

@@ -4,7 +4,9 @@ $schema: https://moonrepo.dev/schemas/tasks.json
 tasks:
     check:
         command: biome check --write
+
     format:
         command: biome format --write
+
     lint:
         command: biome lint --write
